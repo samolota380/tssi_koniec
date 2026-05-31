@@ -22,6 +22,58 @@
       <p>Używaj <code>label</code>, <code>fieldset</code>, <code>legend</code>, <code>tabindex</code> i <code>aria-*</code> dla dostępności.</p>
     </div>
   </div>
+  <div class="section">
+    <h2>Przykłady pól i ich użycie</h2>
+    <div class="code-sample"><pre><code>&lt;input type="range" min="0" max="100" value="50"&gt;
+&lt;input type="color" value="#106226"&gt;
+&lt;input type="file"&gt;</code></pre></div>
+    <div class="example-row">
+      <div class="example-result">
+        <form>
+          <div class="form-field">
+            <label for="r">Zakres (range)</label>
+            <input id="r" type="range" min="0" max="100" value="50">
+          </div>
+          <div class="form-field">
+            <label for="c">Wybierz kolor</label>
+            <input id="c" type="color" value="#106226">
+          </div>
+          <div class="form-field">
+            <label for="f">Plik</label>
+            <input id="f" type="file" accept="image/*">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Przykład z <code>fieldset</code> i <code>legend</code></h2>
+    <div class="code-sample"><pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Dane kontaktowe&lt;/legend&gt;
+  &lt;label&gt;Telefon&lt;input type="tel"&gt;&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre></div>
+    <div class="example-result">
+      <fieldset class="example-fieldset">
+        <legend>Dane kontaktowe</legend>
+        <div class="form-field"><label for="tel">Telefon</label><input id="tel" type="tel" placeholder="123456789" pattern="[0-9]{9}" title="9 cyfr"></div>
+        <div class="form-field">
+          <label>Opcje kontaktu</label>
+          <label><input type="checkbox" name="pref" value="email"> Email</label>
+          <label><input type="checkbox" name="pref" value="phone"> Telefon</label>
+        </div>
+        <div class="form-field">
+          <label>Wybierz ważność</label>
+          <select>
+            <option>Normalna</option>
+            <option>Wysoka</option>
+            <option>Natychmiast</option>
+          </select>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
   <div class="nav-links"><a href="formularze-1.html">← Powrót</a><a href="responsywnosc.html">Następna →</a></div>
 </article>
 <footer>©Jan Popowicz 2026</footer>

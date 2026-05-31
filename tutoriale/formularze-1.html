@@ -23,14 +23,36 @@
   &lt;input id="name" name="name" required&gt;
 &lt;/form&gt;</code></pre></div>
     <div class="definition-box">
-      <form>
-        <label for="f-name">Imię</label><br>
-        <input id="f-name" name="f-name" placeholder="Jan" required><br>
-        <label for="f-msg">Wiadomość</label><br>
-        <textarea id="f-msg" name="f-msg"></textarea>
+      <form action="#" method="post" novalidate>
+        <div class="form-field">
+          <label for="f-name">Imię</label>
+          <input id="f-name" name="f-name" placeholder="Jan" required aria-required="true">
+        </div>
+        <div class="form-field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="f-email" type="email" placeholder="jan@example.com" required aria-required="true">
+        </div>
+        <div class="form-field">
+          <label for="f-msg">Wiadomość</label>
+          <textarea id="f-msg" name="f-msg" rows="4" placeholder="Twoja wiadomość"></textarea>
+        </div>
+        <div class="form-field">
+          <input type="submit" value="Wyślij">
+        </div>
       </form>
     </div>
   </div>
+
+  <div class="section">
+    <h2>Weryfikacja i atrybuty</h2>
+    <div class="code-sample"><pre><code>&lt;input type="email" required&gt;
+&lt;input type="tel" pattern="[0-9]{9}" title="9 cyfr"&gt;
+&lt;input required minlength="3"&gt;</code></pre></div>
+    <div class="example-result">
+      <p>Używaj <code>required</code>, <code>type</code>, <code>pattern</code>, <code>minlength</code> i <code>maxlength</code> aby ograniczyć dane przed wysłaniem.</p>
+    </div>
+  </div>
+
   <div class="nav-links"><a href="pozycjonowanie-kontekstowe.html">← Powrót</a><a href="formularze-2.html">Następna →</a></div>
 </article>
 <footer>©Jan Popowicz 2026</footer>
