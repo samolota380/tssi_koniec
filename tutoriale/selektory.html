@@ -4,134 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selektory w CSS</title>
-    <link rel="stylesheet" href="stylesheet.css">
-    <style>
-        pre {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            overflow-x: auto;
-            max-width: 700px;
-            margin: 15px auto;
-        }
-        code {
-            background-color:inherit;;
-            color:black;
-        }
-        p::first-letter {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: darkblue;
-        }
-    </style>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <header>
+<nav class="menu">
+    <ul>
+        <li><a href="../index.html">Strona Główna</a></li>
+        <li><a href="../tutorials.html">Tutoriale</a></li>
+        <li><a href="../zapis.html">Zapisz się na kurs!</a></li>
+        <li><a href="../opis.html">O stronie</a></li>
+    </ul>
+</nav>
+<article>
+    <div class="lesson-header">
         <h1>Selektory w CSS</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Strona główna</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-            <h2>Co to są selektory?</h2>
-            <p>Selektory w CSS służą do wybierania elementów HTML, które mają być stylizowane. Istnieje wiele rodzajów selektorów, w tym selektory klas, identyfikatorów, a także selektory atrybutów.</p>
+        <p>Jak wybierać elementy HTML i zmieniać ich wygląd w CSS</p>
+    </div>
 
-            <h2>1. Selektor wszystkiego (*)</h2>
-            <p>Uniwersalny selektor (*) wybiera wszystkie elementy na stronie. Najczęściej używany do resetowania domyślnych stylów.</p>
-            <pre><code>* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}</code></pre>
-        
+    <div class="section">
+        <h2>Co to są selektory?</h2>
+        <div class="definition-box">
+            <p>Selektory wskazują elementy, które mają otrzymać styl. To najważniejsza część reguły CSS: <code>selektor { właściwość: wartość; }</code>.</p>
+        </div>
+    </div>
 
-        
-            <h2>2. Selektor znacznika (Element)</h2>
-            <p>Selektor znacznika wybiera wszystkie elementy danego typu. Stosuje styl do wszystkich tagów HTML danego rodzaju.</p>
-            <pre><code>p {
-    color: blue;
-}</code></pre>
-        
+    <div class="section">
+        <h2>Podstawowe selektory</h2>
+        <div class="code-sample"><pre><code>p { color: blue; }
+.important { color: red; }
+#main-title { font-size: 2rem; }
+a:hover { text-decoration: underline; }</code></pre></div>
+        <div class="example-result">
+            <p>Przykład selektora elementu:</p>
+            <p>To jest paragraf stylowany za pomocą selektora elementu.</p>
+            <p class="important">To jest paragraf stylowany wybierając klasę <code>.important</code>.</p>
+            <h2 id="main-title">Nagłówek wybierany przez ID</h2>
+            <p><a href="#main-title">Kliknij, aby zobaczyć selektor ID</a></p>
+        </div>
+    </div>
 
-        
-            <h2>3. Selektor klasy</h2>
-            <p>Selektor klasy wybiera elementy posiadające określoną klasę. Poprzedzany jest kropką (.).</p>
-            <pre><code>.ważne {
-    color: red;
-    font-weight: bold;
-}</code></pre>
-        
+    <div class="section">
+        <h2>Selektor potomka i dziecka</h2>
+        <div class="code-sample"><pre><code>.box p { color: green; }
+.box &gt; p { color: orange; }</code></pre></div>
+        <div class="example-result">
+            <div class="box" style="padding:16px; background:#1f1f1f; border-radius:10px;">
+                <p>Paragraf wewnątrz <code>.box</code> (selektor potomka).</p>
+                <div>
+                    <p>Ten paragraf jest głębiej zagnieżdżony.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        
-            <h2>4. Selektor identyfikatora</h2>
-            <p>Selektor identyfikatora wybiera element o konkretnym ID. Poprzedzany jest znakiem hash (#). ID powinno być unikalne na stronie.</p>
-            <pre><code>#nagłówek {
-    background-color: navy;
-    color: white;
-}</code></pre>
-        
+    <div class="section">
+        <h2>Selektory grupowe i atrybutowe</h2>
+        <div class="code-sample"><pre><code>h1, h2, h3 { margin: 0; }
+a[target] { color: purple; }</code></pre></div>
+        <div class="example-result">
+            <h1>Grupowy selektor</h1>
+            <h2>Grupowy selektor</h2>
+            <h3>Grupowy selektor</h3>
+            <p>Ten link ma atrybut <code>target</code> i jest wybierany selektorem atrybutowym: <a href="https://example.com" target="_blank">Otwórz w nowej karcie</a>.</p>
+        </div>
+    </div>
 
-        
-            <h2>5. Selektor potomka</h2>
-            <p>Selektor potomka wybiera elementy będące potomkami innego elementu (na dowolnym poziomie zagnieżdżenia). Wykorzystuje spację między selektorami.</p>
-            <pre><code>.kontener p {
-    color: green;
-}</code></pre>
-        
+    <div class="section">
+        <h2>Pseudoklasy i pseudoelementy</h2>
+        <div class="code-sample"><pre><code>a:hover { color: orange; }
+p::first-letter { font-size: 2rem; }
+input:focus { outline: 2px solid #3498db; }</code></pre></div>
+        <div class="example-result">
+            <p>Najedź myszką na ten link: <a href="#main-title">Hover link</a></p>
+            <p>To jest przykładowy <span style="display:inline-block; font-size:14px;">tekst</span> z pseudoelementem pierwszej litery.</p>
+            <input type="text" placeholder="Kliknij, aby zobaczyć focus" style="margin-top:10px; padding: 8px; border-radius:6px; border:none; width:100%; max-width:320px; background:#222; color:white;">
+        </div>
+    </div>
 
-        
-            <h2>6. Selektor dziecka</h2>
-            <p>Selektor dziecka (bezpośredniego potomka) wybiera elementy będące bezpośrednimi dziećmi innego elementu. Wykorzystuje symbol > między selektorami.</p>
-            <pre><code>.rodzic &gt; p {
-    color: orange;
-}</code></pre>
-        
-
-        
-            <h2>7. Selektor grupowy</h2>
-            <p>Selektor grupowy pozwala zastosować ten sam styl do wielu selektorów jednocześnie. Selektory są oddzielane przecinkami.</p>
-            <pre><code>h1, h2, h3, p {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}</code></pre>
-        
-
-        
-            <h2>8. Selektor pseudoklasy</h2>
-            <p>Pseudoklasy definiują stan elementu. Poprzedzane są znakiem dwukropka (:). Popularne pseudoklasy: :hover, :active, :focus, :visited, :nth-child().</p>
-            <pre><code>a:link {
-    color: blue;
-}
-a:visited {
-    color: purple;
-}
-a:hover {
-    color: red;
-    text-decoration: underline;
-}
-a:active {
-    color: darkred;
-}
-p:first {
-    font-weight: bold;
-}</code></pre>
-        
-
-        
-            <h2>9. Selektor pseudoelementu</h2>
-            <p>Pseudoelementy pozwalają na stylizowanie części elementu lub dodawanie zawartości. Poprzedzane są podwójnym dwukropkiem (::). Popularne: ::before, ::after, ::first-line, ::first-letter.</p>
-            <pre><code>p::first-letter {
-    font-size: 2em;
-    font-weight: bold;
-    color: green;
-}</code></pre>
-        
-    </main>
-    <footer>
-        <p>©Jan Popowicz</p>
-    </footer>
+    <div class="nav-links">
+        <a href="menu.html">← Powrót</a>
+        <a href="mapa.html">Następna →</a>
+    </div>
+</article>
+<footer>©Jan Popowicz 2026</footer>
 </body>
 </html>

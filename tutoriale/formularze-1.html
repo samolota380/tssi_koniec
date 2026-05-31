@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularze - cz.1</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="menu"><ul><li><a href="../index.html">Strona Główna</a></li><li><a href="../tutorials.html">Tutoriale</a></li><li><a href="../zapis.html">Zapisz się na kurs!</a></li><li><a href="../opis.html">O stronie</a></li></ul></nav>
+<article>
+  <div class="lesson-header"><h1>Formularze — część 1</h1><p>podstawowe elementy: form, input, label, textarea</p></div>
+  <div class="section">
+    <h2>Podstawowe atrybuty</h2>
+    <div class="definition-box">
+      <p>form action, method (GET/POST), autocomplete, novalidate oraz input[type=text], password, submit, reset.</p>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Przykład formularza</h2>
+    <div class="code-sample"><pre><code>&lt;form action="/send" method="post"&gt;
+  &lt;label for="name"&gt;Imię&lt;/label&gt;
+  &lt;input id="name" name="name" required&gt;
+&lt;/form&gt;</code></pre></div>
+    <div class="definition-box">
+      <form>
+        <label for="f-name">Imię</label><br>
+        <input id="f-name" name="f-name" placeholder="Jan" required><br>
+        <label for="f-msg">Wiadomość</label><br>
+        <textarea id="f-msg" name="f-msg"></textarea>
+      </form>
+    </div>
+  </div>
+  <div class="nav-links"><a href="pozycjonowanie-kontekstowe.html">← Powrót</a><a href="formularze-2.html">Następna →</a></div>
+</article>
+<footer>©Jan Popowicz 2026</footer>
+</body>
+</html>

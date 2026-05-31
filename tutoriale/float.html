@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Float i opływanie</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="menu"><ul><li><a href="../index.html">Strona Główna</a></li><li><a href="../tutorials.html">Tutoriale</a></li><li><a href="../zapis.html">Zapisz się na kurs!</a></li><li><a href="../opis.html">O stronie</a></li></ul></nav>
+<article>
+  <div class="lesson-header"><h1>Float</h1><p>Opływanie elementów za pomocą float</p></div>
+
+  <div class="section">
+    <h2>Podstawy</h2>
+    <div class="definition-box">
+      <p>Właściwość <code>float</code> pozwala przesunąć element w lewo lub prawo i umożliwia tekstowi opływanie.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Przykład</h2>
+    <div class="code-sample"><pre><code>.img { float: left; margin: 0 16px 16px 0; }
+.clearfix::after { content: ""; display: table; clear: both; }</code></pre></div>
+
+    <div class="definition-box clearfix">
+      <img src="../img/float-example.png" alt="Przykład float" style="float:left;width:220px;margin-right:16px;border-radius:6px;">
+      <p>Tekst opływający obrazek demonstruje użycie <code>float</code> i konieczność czyszczenia przepływu (clearfix).</p>
+    </div>
+  </div>
+
+  <div class="nav-links"><a href="box-model.html">← Powrót</a><a href="flexbox.html">Następna →</a></div>
+</article>
+<footer>©Jan Popowicz 2026</footer>
+</body>
+</html>
