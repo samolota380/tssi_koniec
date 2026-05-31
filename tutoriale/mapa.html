@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jan Popowicz">
+    <meta name="keywords" content="map, nowy jork, dzielnice">
+    <title>New York</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            width: 1400px;
+        }
+        #obrazek{
+            width: 1000px;
+            height: 1000px;
+            float: left;
+            border-radius: 10px;
+        }
+        #prawy{
+            float: right;
+            width: 400px;
+            height:1000px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <map name="newyorkmap">
+      <area shape="poly" coords="378,522,422,350,558,80,575,273,488,458" alt="Manhattan" href="https://wikipedia.org/wiki/Manhattan" target="_blank">
+      <area shape="circle" coords="178,766,182" alt="Long Island" href="https://wikipedia.org/wiki/Long_Island" target="_blank">
+      <area shape="poly" coords="586,280,583,6,850,90,800,262" alt="Bronx" href="https://wikipedia.org/wiki/Bronx" target="_blank">
+      <area shape="poly" coords="500,413,721,614,700,746,400,780,366,609" alt="Brooklyn" href="https://wikipedia.org/wiki/Brooklyn" target="_blank">
+      <area shape="poly" coords="510,400,584,294,690,360,690,290,940,280,925,610,740,558,740,600,910,720,542,835,538,798,702,740,718,605" alt="Queens" href="https://wikipedia.org/wiki/Queens" target="_blank">
+      <area shape="circle" coords="800,610,47" alt="JFK Airport" href="https://www.flightradar24.com/airport/jfk" target="_blank">
+      <area shape="circle" coords="660,325,24" alt="LGA Airport" href="https://www.flightradar24.com/airport/lga" target="_blank">
+    </map>
+    <img id="obrazek" src="./5_Boroughs_Labels_New_York_City_Map.svg.png" alt="Mapa dzielnic Nowego Jorku" usemap="#newyorkmap">
+    <div id="prawy">
+        <h2>Mapa dzielnic Nowego Jorku</h2>
+        <p>W tej mapie przedstawiono pięć dzielnic Nowego Jorku: Manhattan, Brooklyn, Queens, The Bronx i Long Island. Kliknij na nie aby dowiedzieć się więcej.</p>
+        <ol>
+            <li>Manhattan - najważniejsza dzielnica, która jest centrum biznesowo-usługowym z licznymi wieżowcami i atrakcjami turystycznymi.</li>
+            <li>Brooklyn - znany z artystycznej atmosfery, parków i plaż, a także z mostu Brooklińskiego.</li>
+            <li>Queens - największa dzielnica, która jest domem dla wielu kultur i oferuje różnorodne atrakcje, w tym Flushing Meadows-Corona Park.</li>
+            <li>The Bronx - miejsce narodzin hip-hopu, z licznymi parkami, ogrodami zoologicznymi i stadionem Yankee.</li>
+            <li>Long Island - znany z pięknych plaż, luksusowych rezydencji i winnic, a także z lotniska JFK.</li>
+        </ol>
+        <ul>
+            <li>Lotnisk JFK - największe lotnisko w tym regionie, jedno z największych na świecie.</li>
+            <li>Lotnisk LGA - drugie Nowego Jorku do obsługi krótkich lotów krajowych, znane z bliskości centrum miasta.</li>
+        </ul>
+        <p>
+            © źródło obrazu: https://en.wikipedia.org/wiki/Boroughs_of_New_York_City#/media/File:5_Boroughs_Labels_New_York_City_Map.svg  Vector adopted by User:Nafsadh Original:Quasipalm - 
+        </p>
+    </div>
+</body>
+</html>

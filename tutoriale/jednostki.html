@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jan Popowicz">
+    <meta name="copyright" content="Jan Popowicz">
+    <meta name="robots" content="follow">
+    <meta name="generator" content="VS Code">
+    <meta name="description" content="Jednostki w CSS">
+    <meta name="keywords" content="css">
+    <title>Jednostki CSS | Jan Popowicz</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Jednostki w CSS</h1>
+    <p style="background-color: inherit"><a href="../index.html">Powrót do strony głównej</a></p>
+
+    
+    
+    <p>W CSS istnieje wiele jednostek miary, które można podzielić na dwie główne kategorie: jednostki względne i jednostki bezwzględne.</p>
+    <hr>
+    <h2>Jednostki bezwzględne</h2>
+    <p>Jednostki bezwzględne mają stałą wartość niezależną od innych elementów na stronie.</p>
+    <table>
+            <tr>
+                <th>Jednostka</th>
+                <th>Opis</th>
+            </tr>
+            <tr>
+                <td>cm</td>
+                <td>centymetry</td>
+            </tr>
+            <tr>
+                <td>mm</td>
+                <td>milimetry</td>
+            </tr>
+            <tr>
+                <td>in</td>
+                <td>cale (1in = 96px = 2.54cm)</td>
+            </tr>
+            <tr>
+                <td>px</td>
+                <td id="px">piksele<sup><a href="#pxd">1</a></sup></td>
+            </tr>
+            <tr>
+                <td>pt</td>
+                <td>punkty (1pt = 1/72 cala)</td>
+            </tr>
+            <tr>
+                <td>pc</td>
+                <td>piki / pica (1pc = 12pt)</td>
+            </tr>
+    </table>
+
+    <hr>
+    <h2>Jednostki względne</h2>
+    <p>Jednostki względne są zależne od innych wartości, takich jak rozmiar czcionki lub rozmiar okna przeglądarki.</p>
+    <table>
+            <tr>
+                <th>Jednostka</th>
+                <th>Opis</th>
+            </tr>
+            <tr>
+                <td>em</td>
+                <td>względne do rozmiaru czcionki elementu (np. 2em = 2 razy bieżący rozmiar czcionki)</td>
+            </tr>
+            <tr>
+                <td>ex</td>
+                <td>względne do wysokości litery "x" w aktualnej czcionce (rzadko używane)</td>
+            </tr>
+            <tr>
+                <td>ch</td>
+                <td>względne do szerokości znaku "0" (zero) w danej czcionce</td>
+            </tr>
+            <tr>
+                <td>rem</td>
+                <td>względne do rozmiaru czcionki elementu root (korzenia dokumentu)</td>
+            </tr>
+            <tr>
+                <td>vw</td>
+                <td>1% szerokości widoku (viewport)<sup id="viewport"><a href="#viewportd">2</a></sup></td>
+            </tr>
+            <tr>
+                <td>vh</td>
+                <td>1% wysokości widoku (viewport)</td>
+            </tr>
+            <tr>
+                <td>vmin</td>
+                <td>1% mniejszego wymiaru okna widoku (szerokości lub wysokości)</td>
+            </tr>
+            <tr>
+                <td>vmax</td>
+                <td>1% większego wymiaru okna widoku (szerokości lub wysokości)</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>względne do odpowiedniej właściwości elementu nadrzędnego (np. szerokości rodzica)</td>
+            </tr>
+    </table>
+    <hr>
+    <p><sup id="pxd"><a href="#px">1</a></sup> Uwaga: Piksele (px) się różnią w zależności od ekranu. Na telefonach gęstość pikseli jest większa niż na np. starych komputerach.</p>
+    <p><sup id="viewportd"><a href="#viewport">2</a></sup> Viewport = rozmiar okna przeglądarki. Jeżeli viewport ma 1000px wysokości, to 1vh=10px</p>
+</body>
+</html>

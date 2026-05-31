@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selektory w CSS</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            max-width: 700px;
+            margin: 15px auto;
+        }
+        code {
+            background-color:inherit;;
+            color:black;
+        }
+        p::first-letter {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selektory w CSS</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+            <h2>Co to są selektory?</h2>
+            <p>Selektory w CSS służą do wybierania elementów HTML, które mają być stylizowane. Istnieje wiele rodzajów selektorów, w tym selektory klas, identyfikatorów, a także selektory atrybutów.</p>
+
+            <h2>1. Selektor wszystkiego (*)</h2>
+            <p>Uniwersalny selektor (*) wybiera wszystkie elementy na stronie. Najczęściej używany do resetowania domyślnych stylów.</p>
+            <pre><code>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}</code></pre>
+        
+
+        
+            <h2>2. Selektor znacznika (Element)</h2>
+            <p>Selektor znacznika wybiera wszystkie elementy danego typu. Stosuje styl do wszystkich tagów HTML danego rodzaju.</p>
+            <pre><code>p {
+    color: blue;
+}</code></pre>
+        
+
+        
+            <h2>3. Selektor klasy</h2>
+            <p>Selektor klasy wybiera elementy posiadające określoną klasę. Poprzedzany jest kropką (.).</p>
+            <pre><code>.ważne {
+    color: red;
+    font-weight: bold;
+}</code></pre>
+        
+
+        
+            <h2>4. Selektor identyfikatora</h2>
+            <p>Selektor identyfikatora wybiera element o konkretnym ID. Poprzedzany jest znakiem hash (#). ID powinno być unikalne na stronie.</p>
+            <pre><code>#nagłówek {
+    background-color: navy;
+    color: white;
+}</code></pre>
+        
+
+        
+            <h2>5. Selektor potomka</h2>
+            <p>Selektor potomka wybiera elementy będące potomkami innego elementu (na dowolnym poziomie zagnieżdżenia). Wykorzystuje spację między selektorami.</p>
+            <pre><code>.kontener p {
+    color: green;
+}</code></pre>
+        
+
+        
+            <h2>6. Selektor dziecka</h2>
+            <p>Selektor dziecka (bezpośredniego potomka) wybiera elementy będące bezpośrednimi dziećmi innego elementu. Wykorzystuje symbol > między selektorami.</p>
+            <pre><code>.rodzic &gt; p {
+    color: orange;
+}</code></pre>
+        
+
+        
+            <h2>7. Selektor grupowy</h2>
+            <p>Selektor grupowy pozwala zastosować ten sam styl do wielu selektorów jednocześnie. Selektory są oddzielane przecinkami.</p>
+            <pre><code>h1, h2, h3, p {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}</code></pre>
+        
+
+        
+            <h2>8. Selektor pseudoklasy</h2>
+            <p>Pseudoklasy definiują stan elementu. Poprzedzane są znakiem dwukropka (:). Popularne pseudoklasy: :hover, :active, :focus, :visited, :nth-child().</p>
+            <pre><code>a:link {
+    color: blue;
+}
+a:visited {
+    color: purple;
+}
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+a:active {
+    color: darkred;
+}
+p:first {
+    font-weight: bold;
+}</code></pre>
+        
+
+        
+            <h2>9. Selektor pseudoelementu</h2>
+            <p>Pseudoelementy pozwalają na stylizowanie części elementu lub dodawanie zawartości. Poprzedzane są podwójnym dwukropkiem (::). Popularne: ::before, ::after, ::first-line, ::first-letter.</p>
+            <pre><code>p::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    color: green;
+}</code></pre>
+        
+    </main>
+    <footer>
+        <p>©Jan Popowicz</p>
+    </footer>
+</body>
+</html>
