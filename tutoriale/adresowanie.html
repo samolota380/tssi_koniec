@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adresowanie w HTML5</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-header{ text-align:center; margin:40px 0; }
+        .lesson-header h1{ font-size:2.5rem; }
+        .section{ margin:40px 0; }
+        .code-sample{ background:#111; padding:20px; border-radius:10px; overflow-x:auto; }
+        .note{ background:#2c3e50; padding:15px; border-radius:10px; margin-top:20px; }
+        .nav-links{ display:flex; justify-content:space-between; margin:40px 0; flex-wrap:wrap; gap:15px; }
+        .nav-links a{ display:inline-block; padding:12px 18px; border-radius:10px; background:#106226; color:white; text-decoration:none; }
+    </style>
+</head>
+<body>
+<nav class="menu">
+    <ul>
+        <li><a href="../index.html">Strona Główna</a></li>
+        <li><a href="../tutorials.html">Tutoriale</a></li>
+        <li><a href="../zapis.html">Zapisz się na kurs!</a></li>
+        <li><a href="../opis.html">O stronie</a></li>
+    </ul>
+</nav>
+<article>
+    <div class="lesson-header">
+        <h1>Adresowanie w HTML5</h1>
+        <p>Linki, obrazy i odwołania do elementów na stronie</p>
+    </div>
+    <div class="section">
+        <h2>Linki i atrybut <code>href</code></h2>
+        <p>Element <code>&lt;a&gt;</code> łączy dokumenty i miejsca na stronie.</p>
+        <div class="code-sample">
+<pre><code>&lt;a href="https://example.com"&gt;Strona zewnętrzna&lt;/a&gt;
+&lt;a href="../index.html"&gt;Powrót na stronę główną&lt;/a&gt;
+&lt;a href="#kontakt"&gt;Do sekcji kontakt&lt;/a&gt;</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Adresy bezwzględne i względne</h2>
+        <ul>
+            <li><strong>Bezwzględny:</strong> pełny adres z protokołem, np. <code>https://...</code></li>
+            <li><strong>Względny:</strong> ścieżka względem aktualnej lokalizacji pliku, np. <code>../index.html</code></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Obrazki i atrybuty</h2>
+        <p>Element <code>&lt;img&gt;</code> wymaga <code>src</code> i <code>alt</code>, a opcjonalnie może mieć <code>title</code>, <code>width</code>, <code>height</code>.</p>
+        <div class="code-sample">
+<pre><code>&lt;img src="../img/html_i_csss.png" alt="HTML i CSS" title="Przykładowy obraz" width="600" height="400"&gt;</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Odniesienia do elementów na stronie</h2>
+        <p>Identyfikator <code>id</code> pozwala odwołać się do konkretnego miejsca.</p>
+        <div class="code-sample">
+<pre><code>&lt;a href="#sekcja1"&gt;Przejdź do sekcji 1&lt;/a&gt;
+...
+&lt;h2 id="sekcja1"&gt;Sekcja 1&lt;/h2&gt;</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Mailto</h2>
+        <p>Link otwierający program pocztowy używa <code>mailto:</code>.</p>
+        <div class="code-sample">
+<pre><code>&lt;a href="mailto:kontakt@example.com"&gt;Napisz do nas&lt;/a&gt;</code></pre>
+        </div>
+    </div>
+    <div class="note">
+        <p><strong>Ważne:</strong> zawsze dodawaj <code>alt</code> do obrazków - pomaga dostępności i SEO.</p>
+    </div>
+    <div class="nav-links">
+        <a href="tabele.html">← Powrót</a>
+        <a href="grafika.html">Następna strona →</a>
+    </div>
+</article>
+<footer>©Jan Popowicz 2026</footer>
+</body>
+</html>

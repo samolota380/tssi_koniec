@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabele w HTML</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-header{ text-align:center; margin:40px 0; }
+        .lesson-header h1{ font-size:2.5rem; }
+        .section{ margin:40px 0; }
+        .table-example{ width:100%; overflow-x:auto; }
+        table{ border-collapse:collapse; width:100%; background:#111; color:#fff; }
+        th, td{ border:1px solid #444; padding:12px; text-align:left; }
+        th{ background:#2c3e50; }
+        .code-sample{ background:#111; padding:20px; border-radius:10px; overflow-x:auto; }
+        .nav-links{ display:flex; justify-content:space-between; margin:40px 0; flex-wrap:wrap; gap:15px; }
+        .nav-links a{ display:inline-block; padding:12px 18px; border-radius:10px; background:#106226; color:white; text-decoration:none; }
+    </style>
+</head>
+<body>
+<nav class="menu">
+    <ul>
+        <li><a href="../index.html">Strona Główna</a></li>
+        <li><a href="../tutorials.html">Tutoriale</a></li>
+        <li><a href="../zapis.html">Zapisz się na kurs!</a></li>
+        <li><a href="../opis.html">O stronie</a></li>
+    </ul>
+</nav>
+<article>
+    <div class="lesson-header">
+        <h1>Tabele</h1>
+        <p>Układanie danych w wierszach i kolumnach w HTML</p>
+    </div>
+    <div class="section">
+        <h2>Podstawowe elementy</h2>
+        <p>Tabela w HTML składa się z:</p>
+        <ul>
+            <li><code>&lt;table&gt;</code> – kontener tabeli</li>
+            <li><code>&lt;tr&gt;</code> – wiersz</li>
+            <li><code>&lt;th&gt;</code> – komórka nagłówka</li>
+            <li><code>&lt;td&gt;</code> – komórka danych</li>
+        </ul>
+    </div>
+    <div class="section table-example">
+        <table>
+            <tr><th>Produkt</th><th>Cena</th><th>Ilość</th></tr>
+            <tr><td>Monitor</td><td>799 zł</td><td>1</td></tr>
+            <tr><td>Klawiatura</td><td>120 zł</td><td>2</td></tr>
+            <tr><td>Mysz</td><td>75 zł</td><td>3</td></tr>
+        </table>
+    </div>
+    <div class="section">
+        <h2>Przykład kodu</h2>
+        <div class="code-sample">
+<pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Produkt&lt;/th&gt;
+    &lt;th&gt;Cena&lt;/th&gt;
+    &lt;th&gt;Ilość&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Monitor&lt;/td&gt;
+    &lt;td&gt;799 zł&lt;/td&gt;
+    &lt;td&gt;1&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Rowspan i colspan</h2>
+        <p>Dzięki <code>rowspan</code> i <code>colspan</code> można łączyć komórki w pionie lub poziomie.</p>
+        <div class="code-sample">
+<pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th rowspan="2"&gt;Produkt&lt;/th&gt;
+    &lt;th colspan="2"&gt;Sprzedaż&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Styczeń&lt;/th&gt;
+    &lt;th&gt;Luty&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Monitor&lt;/td&gt;
+    &lt;td&gt;10&lt;/td&gt;
+    &lt;td&gt;12&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Tabela zagnieżdżona</h2>
+        <p>W jednej komórce można umieścić kolejną tabelę.</p>
+        <div class="code-sample">
+<pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Część A&lt;/td&gt;
+    &lt;td&gt;
+      &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;Podtabela 1&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </div>
+    </div>
+    <div class="nav-links">
+        <a href="listy.html">← Powrót</a>
+        <a href="adresowanie.html">Następna strona →</a>
+    </div>
+</article>
+<footer>©Jan Popowicz 2026</footer>
+</body>
+</html>

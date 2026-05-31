@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafika w HTML</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-header{ text-align:center; margin:40px 0; }
+        .lesson-header h1{ font-size:2.5rem; }
+        .section{ margin:40px 0; }
+        .image-demo{ display:block; max-width:100%; margin:20px auto; border-radius:10px; }
+        .code-sample{ background:#111; padding:20px; border-radius:10px; overflow-x:auto; }
+        .nav-links{ display:flex; justify-content:space-between; margin:40px 0; flex-wrap:wrap; gap:15px; }
+        .nav-links a{ display:inline-block; padding:12px 18px; border-radius:10px; background:#106226; color:white; text-decoration:none; }
+        @media (max-width: 600px){ .image-demo{ width:100%; } }
+    </style>
+</head>
+<body>
+<nav class="menu">
+    <ul>
+        <li><a href="../index.html">Strona Główna</a></li>
+        <li><a href="../tutorials.html">Tutoriale</a></li>
+        <li><a href="../zapis.html">Zapisz się na kurs!</a></li>
+        <li><a href="../opis.html">O stronie</a></li>
+    </ul>
+</nav>
+<article>
+    <div class="lesson-header">
+        <h1>Grafika</h1>
+        <p>Wstawianie obrazów i ustawianie ich atrybutów</p>
+    </div>
+    <div class="section">
+        <h2>Podstawowy obraz</h2>
+        <p>Element <code>&lt;img&gt;</code> jest samotnym znacznikiem.</p>
+        <div class="code-sample">
+<pre><code>&lt;img src="../img/html_i_csss.png" alt="HTML i CSS"&gt;</code></pre>
+        </div>
+        <img class="image-demo" src="../img/html_i_csss.png" alt="HTML i CSS">
+    </div>
+    <div class="section">
+        <h2>Atrybuty obrazu</h2>
+        <ul>
+            <li><code>src</code> – ścieżka do pliku</li>
+            <li><code>alt</code> – tekst alternatywny</li>
+            <li><code>title</code> – podpowiedź wyświetlana po najechaniu</li>
+            <li><code>width</code> i <code>height</code> – wymiary obrazu</li>
+        </ul>
+        <div class="code-sample">
+<pre><code>&lt;img src="../img/html_i_csss.png" alt="HTML i CSS" title="Grafika edukacyjna" width="600" height="400"&gt;</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Element <code>&lt;figure&gt;</code> i <code>&lt;figcaption&gt;</code></h2>
+        <p>Dzięki nim opis obrazu staje się częścią semantycznej struktury strony.</p>
+        <div class="code-sample">
+<pre><code>&lt;figure&gt;
+  &lt;img src="../img/html_i_csss.png" alt="HTML i CSS"&gt;
+  &lt;figcaption&gt;Przykład elementu figure z podpisem.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+        </div>
+    </div>
+    <div class="nav-links">
+        <a href="adresowanie.html">← Powrót</a>
+        <a href="css-wprowadzenie.html">Następna strona →</a>
+    </div>
+</article>
+<footer>©Jan Popowicz 2026</footer>
+</body>
+</html>

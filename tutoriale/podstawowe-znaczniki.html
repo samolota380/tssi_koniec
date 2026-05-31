@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podstawowe znaczniki HTML</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-header{ text-align:center; margin:40px 0; }
+        .lesson-header h1{ font-size:2.5rem; }
+        .section{ margin:40px 0; }
+        .code-sample{ background:#111; padding:20px; border-radius:10px; overflow-x:auto; }
+        .tags-grid{ display:grid; grid-template-columns: repeat(2, minmax(180px,1fr)); gap:15px; margin-top:20px; }
+        .tag-box{ background:#2c3e50; padding:15px; border-radius:10px; }
+        .nav-links{ display:flex; justify-content:space-between; margin:40px 0; flex-wrap:wrap; gap:15px; }
+        .nav-links a{ display:inline-block; padding:12px 18px; border-radius:10px; background:#106226; color:white; text-decoration:none; }
+        @media (max-width: 600px){ .tags-grid{ grid-template-columns:1fr; } }
+    </style>
+</head>
+<body>
+<nav class="menu">
+    <ul>
+        <li><a href="../index.html">Strona Główna</a></li>
+        <li><a href="../tutorials.html">Tutoriale</a></li>
+        <li><a href="../zapis.html">Zapisz się na kurs!</a></li>
+        <li><a href="../opis.html">O stronie</a></li>
+    </ul>
+</nav>
+<article>
+    <div class="lesson-header">
+        <h1>Podstawowe znaczniki HTML</h1>
+        <p>Najważniejsze elementy służące do budowania zawartości strony</p>
+    </div>
+    <div class="section">
+        <h2>Meta i nagłówki</h2>
+        <p>Znacznik <code>&lt;meta&gt;</code> umieszczamy w <code>&lt;head&gt;</code>. Opcje to m.in.</p>
+        <ul>
+            <li><code>description</code></li>
+            <li><code>keywords</code></li>
+            <li><code>copyright</code></li>
+            <li><code>generator</code></li>
+            <li><code>robots</code></li>
+        </ul>
+        <div class="code-sample">
+<pre><code>&lt;meta name="description" content="Samouczek HTML i CSS"&gt;
+&lt;meta name="keywords" content="html, css, samouczek"&gt;
+&lt;meta name="copyright" content="Jan Popowicz"&gt;
+&lt;meta name="generator" content="Visual Studio Code"&gt;
+&lt;meta name="robots" content="index, follow"&gt;</code></pre>
+        </div>
+        <p>Nagłówki <code>&lt;h1&gt;</code> do <code>&lt;h6&gt;</code> określają ważność sekcji.</p>
+        <div class="code-sample">
+<pre><code>&lt;h1&gt;Tytuł strony&lt;/h1&gt;
+&lt;h2&gt;Podtytuł&lt;/h2&gt;
+&lt;h3&gt;Mniejszy nagłówek&lt;/h3&gt;</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Znaczniki blokowe i liniowe</h2>
+        <p>Znaczniki blokowe zajmują pełną szerokość wiersza, np. <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;h2&gt;</code>.</p>
+        <p>Znaczniki liniowe znajdują się w linii tekstu, np. <code>&lt;em&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;span&gt;</code>.</p>
+        <div class="tags-grid">
+            <div class="tag-box"><strong>Blokowe:</strong><br>&lt;h1&gt;, &lt;h2&gt;, &lt;p&gt;, &lt;blockquote&gt;, &lt;pre&gt;</div>
+            <div class="tag-box"><strong>Liniowe:</strong><br>&lt;em&gt;, &lt;strong&gt;, &lt;cite&gt;, &lt;q&gt;, &lt;small&gt;, &lt;i&gt;, &lt;b&gt;, &lt;span&gt;</div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Znaczniki inline</h2>
+        <p>Ważne elementy tekstowe używane wewnątrz paragrafów:</p>
+        <ul>
+            <li><code>&lt;em&gt;</code> – tekst emfatyczny</li>
+            <li><code>&lt;strong&gt;</code> – mocny nacisk</li>
+            <li><code>&lt;cite&gt;</code> – cytat lub źródło</li>
+            <li><code>&lt;q&gt;</code> – krótki cytat</li>
+            <li><code>&lt;blockquote&gt;</code> – dłuższy cytat</li>
+            <li><code>&lt;small&gt;</code> – mały tekst</li>
+            <li><code>&lt;i&gt;</code>, <code>&lt;b&gt;</code> – kursywa i pogrubienie</li>
+            <li><code>&lt;br&gt;</code> – złamanie linii</li>
+            <li><code>&lt;hr&gt;</code> – linia pozioma</li>
+            <li><code>&lt;code&gt;</code> – kod</li>
+            <li><code>&lt;pre&gt;</code> – tekst sformatowany</li>
+            <li><code>&lt;sup&gt;</code>, <code>&lt;sub&gt;</code> – indeksy</li>
+            <li><code>&lt;ins&gt;</code>, <code>&lt;del&gt;</code> – wstawiony / usunięty tekst</li>
+            <li><code>&lt;span&gt;</code> – fragment tekstu do stylowania</li>
+        </ul>
+        <div class="code-sample">
+<pre><code>&lt;p&gt;To jest &lt;strong&gt;pogrubiony&lt;/strong&gt; i &lt;em&gt;pochylony&lt;/em&gt; tekst.&lt;/p&gt;
+&lt;p&gt;Cytat: &lt;q&gt;HTML jest podstawą sieci.&lt;/q&gt;&lt;/p&gt;
+&lt;pre&gt;Kilka
+linii
+tekstu&lt;/pre&gt;
+&lt;p&gt;E=mc&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</code></pre>
+        </div>
+    </div>
+    <div class="nav-links">
+        <a href="html-podstawy.html">← Powrót</a>
+        <a href="listy.html">Następna strona →</a>
+    </div>
+</article>
+<footer>©Jan Popowicz 2026</footer>
+</body>
+</html>

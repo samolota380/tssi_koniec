@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - wprowadzenie</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-header{ 
+            text-align:center; 
+            margin:40px 0; 
+        }
+        .lesson-header h1{ 
+            font-size:2.5rem; 
+        }
+        .section{ margin:40px 0; }
+        .code-sample{ background:#111; 
+            padding:20px; 
+            border-radius:10px; 
+            overflow-x:auto; 
+        }
+        .note{ 
+            background:#2c3e50; 
+            padding:15px; 
+            border-radius:10px; 
+            margin-top:20px; }
+        .selektor{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .nav-links{ display:flex; justify-content:space-between; margin:40px 0; flex-wrap:wrap; gap:15px; }
+        .nav-links a{ display:inline-block; padding:12px 18px; border-radius:10px; background:#106226; color:white; text-decoration:none; }
+        @media (max-width: 768px) {
+    .selektor {
+        grid-template-columns: 1fr;
+    }
+
+    .selektor img {
+        width: 100%;
+        height: auto;
+        float: none; /* usuwa ręczne „wpychanie” obrazka */
+    }
+}
+    </style>
+</head>
+<body>
+<nav class="menu">
+    <ul>
+        <li><a href="../index.html">Strona Główna</a></li>
+        <li><a href="../tutorials.html">Tutoriale</a></li>
+        <li><a href="../zapis.html">Zapisz się na kurs!</a></li>
+        <li><a href="../opis.html">O stronie</a></li>
+    </ul>
+</nav>
+<article>
+    <div class="lesson-header">
+        <h1>CSS - wprowadzenie</h1>
+        <p>Podstawy stylowania stron: selektory, właściwości, rodzaje CSS</p>
+    </div>
+    <div class="section">
+        <h2>Selektory CSS</h2>
+        <p>Selektor wskazuje elementy, które mają otrzymać styl.</p>
+        <div class="selektor">
+        <div class="code-sample">
+<pre><code>/* Selektor elementu */
+p { color: red; }
+
+/* Selektor klasy */
+.box { background-color: blue; }
+
+/* Selektor id */
+#naglowek { font-size: 24px; }</code></pre>
+
+        </div>
+    <img src="../img/selektor.png" alt="Znaczniki HTML kontenerowe i pojedyncze" style="border-radius:10px; float:right;">
+    </div></div>
+    <div class="section">
+        <h2>Właściwość, wartość, deklaracja</h2>
+        <p>Reguła CSS składa się z selektora, klamry i deklaracji w formacie <code>właściwość: wartość;</code>.</p>
+        <div class="code-sample">
+<pre><code>h1 {
+  color: #2c3e50;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-decoration: underline;
+}</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Rodzaje CSS</h2>
+        <ul>
+            <li>zewnętrzny - plik <code>.css</code></li>
+            <li>wewnętrzny - wewnątrz <code>&lt;style&gt;</code> w <code>&lt;head&gt;</code></li>
+            <li>lokalny (inline) - atrybut <code>style="..."</code></li>
+        </ul>
+        <div class="code-sample">
+<pre><code>&lt;!-- zewnętrzny --&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+
+&lt;!-- wewnętrzny --&gt;
+&lt;style&gt; p { color: blue; } &lt;/style&gt;
+
+&lt;!-- lokalny --&gt;
+&lt;p style="color: green;"&gt;Tekst&lt;/p&gt;</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Hierarchia stylów</h2>
+        <p>Styl który jest najbliżej danego elementu w html wykrywa, stąd się wzięła nazwa <em>Cascading Style Sheets</em>.</p>
+        <div class="note">
+            <p><strong>Przykład:</strong> <code>p { color: blue; }</code> może zostać zastąpione przez to co jest niżej w stylu, np. <code>.klasa { color: red; }</code> lub <code>#main p { color: green; }</code>.</p>
+        </div>
+        <p>Reset CSS usuwa domyślne marginesy i padding przeglądarki.</p>
+        <div class="code-sample">
+<pre><code>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}</code></pre>
+        </div>
+        <p>Arkusz zerujący Meyera to dostępny na internecie zewnętrzny arkusz stylów, który resetuje wszystkie domyślne formatowania każdej przeglądarki.</p>
+    </div>
+    <div class="nav-links">
+        <a href="grafika.html">← Powrót</a>
+        <a href="../tutorials.html">Powrót do listy tutoriali</a>
+    </div>
+</article>
+<footer>©Jan Popowicz 2026</footer>
+</body>
+</html>

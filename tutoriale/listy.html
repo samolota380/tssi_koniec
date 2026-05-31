@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listy w HTML</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-header{ text-align:center; margin:40px 0; }
+        .lesson-header h1{ font-size:2.5rem; }
+        .section{ margin:40px 0; }
+        .code-sample{ background:#111; padding:20px; border-radius:10px; overflow-x:auto; }
+        .nav-links{ display:flex; justify-content:space-between; margin:40px 0; flex-wrap:wrap; gap:15px; }
+        .nav-links a{ display:inline-block; padding:12px 18px; border-radius:10px; background:#106226; color:white; text-decoration:none; }
+    </style>
+</head>
+<body>
+<nav class="menu">
+    <ul>
+        <li><a href="../index.html">Strona Główna</a></li>
+        <li><a href="../tutorials.html">Tutoriale</a></li>
+        <li><a href="../zapis.html">Zapisz się na kurs!</a></li>
+        <li><a href="../opis.html">O stronie</a></li>
+    </ul>
+</nav>
+<article>
+    <div class="lesson-header">
+        <h1>Listy</h1>
+        <p>Struktury danych w HTML do prezentacji elementów w kolejności lub grupie</p>
+    </div>
+    <div class="section">
+        <h2>Lista nieuporządkowana</h2>
+        <p>Lista <code>&lt;ul&gt;</code> zawiera elementy <code>&lt;li&gt;</code> bez ustalonej kolejności.</p>
+        <div class="code-sample">
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;Pierwszy element&lt;/li&gt;
+  &lt;li&gt;Drugi element&lt;/li&gt;
+  &lt;li&gt;Trzeci element&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Lista uporządkowana</h2>
+        <p>Lista <code>&lt;ol&gt;</code> zawiera elementy w kolejności numerycznej.</p>
+        <div class="code-sample">
+<pre><code>&lt;ol&gt;
+  &lt;li&gt;Pierwszy krok&lt;/li&gt;
+  &lt;li&gt;Drugi krok&lt;/li&gt;
+  &lt;li&gt;Trzeci krok&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Lista definicji</h2>
+        <p>Lista <code>&lt;dl&gt;</code> używana do przedstawienia terminów i ich opisów.</p>
+        <div class="code-sample">
+<pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Język znaczników używany do tworzenia stron.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Język stylów do formatowania wyglądu strony.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Praktyczne zastosowania</h2>
+        <p>Listy są przydatne do menu, spisów treści, instrukcji i opisów krok po kroku.</p>
+        <ul>
+            <li>Menu nawigacyjne</li>
+            <li>Instrukcje</li>
+            <li>Spis tematów</li>
+            <li>FAQ</li>
+        </ul>
+    </div>
+    <div class="nav-links">
+        <a href="podstawowe-znaczniki.html">← Powrót</a>
+        <a href="tabele.html">Następna strona →</a>
+    </div>
+</article>
+<footer>©Jan Popowicz 2026</footer>
+</body>
+</html>
