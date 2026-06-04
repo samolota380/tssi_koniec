@@ -10,134 +10,137 @@
     <meta name="description" content="Tutorial o html i css jako projekt zaliczeniowy na tssi">
     <link rel="stylesheet" href="style.css">
     <title>HTML i CSS</title>
-<style>
+    <style>
 
-.hero{
-    position: relative;
-    margin-bottom: 40px;
+    .hero {
+        position: relative;
+        margin-bottom: 40px;
+    }
+
+    .hero img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+
+        width: 80%;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        color: white;
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 8px black;
+    }
+
+    .hero-text p {
+        color: white;
+        font-size: 1.2rem;
+        text-shadow: 2px 2px 8px black;
+    }
+
+    .content-image {
+        width: 100%;
+        max-width: 300px;
+        display: block;
+        margin: 25px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .info-box {
+        background-color: white;
+        padding: 25px;
+        margin-top: 25px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+h1{
+    position:relative;
+    z-index:1;
+    top: 200px;
+    left: 32%
 }
-
-.hero img{
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    display: block;
-}
-
-.hero::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-}
-
-.hero-text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-
-    width: 80%;
-    text-align: center;
-}
-
-.hero-text h1{
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 8px black;
-}
-
-.hero-text p{
-    color: white;
-    font-size: 1.2rem;
-    text-shadow: 2px 2px 8px black;
-}
-
-.content-image{
-    width: 100%;
-    max-width: 300px;
-    display: block;
-    margin: 25px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.info-box{
-    background-color: white;
-    padding: 25px;
-    margin-top: 25px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-}
-
-</style>
+    </style>
 </head>
 <body>
-<nav class="menu">
-    <ul>
-        <li><a>Strona Główna</a></li>
-        <li><a href="tutorials.html">Tutoriale</a></li>
-        <li><a href="zapis.html">Zapisz się na kurs!</a></li>
-        <li><a href="opis.html">O stronie</a></li>
-    </ul>
-</nav>
-<article>
-    <br>
-    <section class="hero">
-    <img src="img/laptop.jpeg" alt="Programowanie stron internetowych">
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Strona Główna</a></li>
+            <li><a href="tutorials.html">Tutoriale</a></li>
+            <li><a href="zapis.html">Zapisz się na kurs!</a></li>
+            <li><a href="opis.html">O stronie</a></li>
+        </ul>
+    </nav>
 
-    <div class="hero-text">
+    <article>
         <h1>Samouczek HTML i CSS</h1>
 
+        <div class="hero">
+            <img src="img/laptop.jpeg" alt="Programowanie stron internetowych">
+
+            <div class="hero-text">
+                <p>
+                    Kompletny przewodnik po technologiach tworzenia stron internetowych.
+                    Przygotuj się do egzaminu <strong>INF.03</strong> i uporządkuj wiedzę zdobytą podczas zajęć.
+                </p>
+            </div>
+        </div>
+
         <p>
-            Kompletny przewodnik po technologiach tworzenia stron internetowych.
-            Przygotuj się do egzaminu <strong>INF.03</strong> i uporządkuj wiedzę zdobytą podczas zajęć.
+            Znajdziesz tutaj najważniejsze informacje dotyczące tworzenia stron
+            internetowych, wraz z przykładami kodu i wyjaśnieniami poszczególnych
+            zagadnień.
         </p>
-    </div>
-    </section>
 
-    <p>
-        Znajdziesz tutaj najważniejsze informacje dotyczące tworzenia stron
-        internetowych, wraz z przykładami kodu i wyjaśnieniami poszczególnych
-        zagadnień.
-    </p>
+        <h2>Dlaczego warto poznać <em>HTML i CSS?</em></h2>
 
-    <h2>Dlaczego warto poznać <em>HTML i CSS?</em></h2>
+        <img class="content-image" src="img/html_i_csss.png" alt="HTML i CSS">
 
-    <img class="content-image"
-     src="img/html_i_csss.png"
-     alt="HTML i CSS">
+        <p>
+            HTML odpowiada za strukturę strony internetowej, natomiast CSS
+            pozwala nadać jej odpowiedni wygląd. Są to podstawowe technologie
+            wykorzystywane podczas tworzenia nowoczesnych witryn internetowych.
+        </p>
 
-    <p>
-        HTML odpowiada za strukturę strony internetowej, natomiast CSS
-        pozwala nadać jej odpowiedni wygląd. Są to podstawowe technologie
-        wykorzystywane podczas tworzenia nowoczesnych witryn internetowych.
-    </p>
+        <h2>Zakres samouczka</h2>
 
-    <h2>Zakres samouczka</h2>
+        <ul>
+            <li>Podstawy HTML5</li>
+            <li>Podstawowe znaczniki</li>
+            <li>Listy</li>
+            <li>Tabele</li>
+            <li>Adresowanie i odsyłacze</li>
+            <li>Grafika</li>
+            <li>CSS - wprowadzenie</li>
+            <li>Responsywność i Media Queries</li>
+        </ul>
 
-    <ul>
-        <li>Podstawy HTML5</li>
-        <li>Podstawowe znaczniki</li>
-        <li>Listy</li>
-        <li>Tabele</li>
-        <li>Adresowanie i odsyłacze</li>
-        <li>Grafika</li>
-        <li>CSS - wprowadzenie</li>
-        <li>Responsywność i Media Queries</li>
-    </ul>
+        <h2>Jak korzystać z samouczka?</h2>
 
-    <h2>Jak korzystać z samouczka?</h2>
+        <p>
+            Przejdź do zakładki <a href="tutorials.html">Tutoriale</a>, aby wybrać interesujące Cię
+            zagadnienie. Każda podstrona zawiera opis, przykłady kodu oraz
+            najważniejsze informacje potrzebne do utrwalenia materiału.
+        </p>
+    </article>
 
-    <p>
-        Przejdź do zakładki <a href="tutorials.html">Tutoriale</a>, aby wybrać interesujące Cię
-        zagadnienie. Każda podstrona zawiera opis, przykłady kodu oraz
-        najważniejsze informacje potrzebne do utrwalenia materiału.
-    </p>
-
-</article>
-<footer>©Jan Popowicz 2026</footer>
+    <footer>©Jan Popowicz 2026</footer>
 </body>
 </html>
