@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O stronie</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .about-wrapper{
+      display:grid;
+      grid-template-columns: 1fr 2fr;
+      gap:20px;
+      align-items:start;
+    }
+
+    .profile-img{
+      width:100%;
+      max-width:260px;
+      border-radius:12px;
+      display:block;
+    }
+
+    @media (max-width: 768px){
+      .about-wrapper{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="menu">
+  <ul>
+    <li><a href="../index.html">Strona Główna</a></li>
+    <li><a href="../tutorials.html">Tutoriale</a></li>
+    <li><a href="../zapis.html">Zapisz się na kurs!</a></li>
+    <li><a href="../opis.html">O stronie</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="lesson-header">
+    <h1>O stronie</h1>
+    <p>kilka słów o projekcie i autorze</p>
+  </div>
+
+  <div class="section">
+
+    <div class="about-wrapper">
+
+      <div>
+        <img class="profile-img" src="../me.jpg" alt="Zdjęcie autora">
+      </div>
+
+      <div class="definition-box">
+        <p>
+          Ta strona powstała jako projekt zaliczeniowy na 40 punktów w ramach nauki tworzenia stron internetowych w ZSŁ Kraków.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Autor</h2>
+
+    <div class="definition-box">
+      <p>
+        Jan Popowicz. Wiem, że na adresie na którym hostowana jest ta strona nie ma mojego imienia i nazwiska, po prostu to alt-konto.
+      </p>
+    </div>
+
+  </div>
+
+
+</article>
+
+<footer>© Jan Popowicz 2026</footer>
+
+</body>
+</html>

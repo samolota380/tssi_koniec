@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapisy</title>
+<style>
+*{
+    box-sizing: border-box;
+    font-size: 20px;
+}
+#formularz{
+    background-color: gray;
+    border: 5px solid yellow;
+    padding:10px;
+    width: 600px;
+    margin: 0 auto;
+    height:700px;
+}
+body{
+    position:relative;
+}
+h1{
+    text-align: center;
+    margin:20px;
+    font-size: 40px;
+}
+h1::first-letter{
+    font-size: 150%;
+}
+div{
+    position:relative;
+    width:459px;
+}
+form{
+    width:500px;
+    height:500px;
+    background-color: lightgray;
+    border: 3px solid black;
+    border-radius: 30px;
+    padding:20px;
+    margin: 0 auto;
+    position:relative;
+}
+input[type=text], input[type=email], input[type=week], select{
+    position:absolute;
+    right: 0px;
+    width:250px;
+}
+fieldset{
+    border: 2px dashed yellow;
+    position:absolute;
+    top:240px;
+    width:450px;
+}
+legend{
+    text-align: center;
+}
+#wybieranie-kursu{
+    position:absolute;
+    bottom:100px;
+}
+input::placeholder{
+    font-size:70%;
+}
+select{
+    position:absolute;
+    right:0px;
+}
+input[type=radio]{
+    position:absolute;
+    right:20px;
+}
+#buttony{
+    position:absolute;
+    bottom:30px;
+    width:250px;
+    margin: 0 auto;
+    left: 125px;
+}
+button{
+    width: 120px;
+    font-size: 15px;
+    text-align:center;
+    padding:10px;
+    border:2px solid black;
+    border-radius: 10px;
+}
+img{
+    position:absolute;
+    right:15px;
+    bottom:40px;
+    height:100px;
+    border:2px solid black;
+    border-radius: 50px;
+}
+</style>
+</head>
+<body>
+<nav class="menu">
+    <ul>
+        <li><a href="index.html">Strona Główna</a></li>
+        <li><a href="tutorials.html">Tutoriale</a></li>
+        <li><a href="zapis.html">Zapisz się na kurs!</a></li>
+        <li><a href="opis.html">O stronie</a></li>
+    </ul>
+</nav>
+    <div id="formularz">
+    <h1>Zapisz się na tygodniowy kurs</h1>
+    <form action="#" method="post" novalidate="novalidate">
+        <div><label for="imie">Imię:</label>
+        <input type="text" placeholder="Podaj swoje imię" name="imie" id="imie"></div>
+        <br>
+        <div><label for="nazwisko">Nazwisko:</label>
+        <input type="text" placeholder="Podaj swoje nazwisko" name="nazwisko" id="nazwisko"></div>
+        <br>
+        <div><label for="email">Email:</label>
+        <input type="email" placeholder="Podaj swój email" name="email" id="email"></div>
+        <br>
+        <div><label for="data">Data:</label>
+        <input type="week" name="data" id="data"></div>
+        <br><fieldset>
+            <legend>Wybierz poziom zaawansowania</legend>
+            <label for="begginer">Początkujący:</label>
+            <input type="radio" name="poziom" value="Początkujący" id="begginer"><br>
+            <label for="medium">Średnio zaawansowany:</label>
+            <input type="radio" name="poziom" value="Średnio zaawansowany" id="medium"><br>
+            <label for="advanced">Zaawansowany:</label>
+            <input type="radio" name="poziom" value="Zaawansowany" id="advanced">
+        </fieldset>
+        <br>
+        <div id="wybieranie-kursu"><label for="kurs">Wybierz kurs:</label>
+        <select name="kurs" size="1" id="kurs">
+            <option selected="selected">-------------</option>
+            <optgroup label="Programowanie">
+            <option value="Python">Python</option>
+            <option value="C++">C++</option>
+            </optgroup>
+            <optgroup label="Strony Internetowe">
+            <option value="Html">Html</option>
+            <option value="Css">Css</option>
+            <option value="Js">Javascript</option>
+            </optgroup>
+        </select></div>
+        <br>
+        <div id="buttony"><button type="submit">zarejestruj</button>
+        <button type="reset">zresetuj</button></div>
+    </form>
+    <img src="ZSŁ_logo.jpg" alt="logo ZSŁ">
+    </div>
+<footer>©Jan Popowicz 2026</footer>
+</body>
+</html>
