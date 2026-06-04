@@ -9,21 +9,92 @@
 <body>
 <nav class="menu"><ul><li><a href="../index.html">Strona Główna</a></li><li><a href="../tutorials.html">Tutoriale</a></li><li><a href="../zapis.html">Zapisz się na kurs!</a></li><li><a href="../opis.html">O stronie</a></li></ul></nav>
 <article>
-  <div class="lesson-header"><h1>Pozycjonowanie kontekstowe</h1><p>overflow, z-index, i zasady kontekstu tworzenia stacking context</p></div>
-  <div class="section">
-    <h2>Overflow i przewijanie</h2>
-    <div class="definition-box">Overflow: visible, hidden, scroll, auto.</div>
+  <div class="lesson-header"><h1>Pozycjonowanie kontekstowe</h1><p>overflow, z-index</p></div>
+ <div class="section">
+  <h2>overflow</h2>
+
+  <div class="definition-box">
+
+    <p>visible</p>
+    <div style="width:200px; height:80px; background:#111; overflow:visible;">
+      <div style="width:300px; background:#3498db;">wychodzi poza box</div>
+    </div>
+
+    <br>
+
+    <p>hidden</p>
+    <div style="width:200px; height:80px; background:#111; overflow:hidden;">
+      <div style="width:300px; background:#e74c3c;">ucięte</div>
+    </div>
+
+    <br>
+
+    <p>scroll</p>
+    <div style="width:200px; height:80px; background:#111; overflow:scroll;">
+      <div style="width:300px; background:#2ecc71;">scroll</div>
+    </div>
+
   </div>
-  <div class="section">
-    <h2>Z-index i kontekst</h2>
-    <div class="definition-box">Z-index działa tylko dla pozycyjnie ustawionych elementów (nie static). Z-index tworzy kontekst z-index gdy element ma transform/opacity/position itp.</div>
+</div>
+ <div class="section">
+  <h2>z-index – podstawowy problem</h2>
+
+  <div class="definition-box">
+
+    <div style="position:relative; height:120px;">
+
+      <div style="position:absolute; top:20px; left:20px; z-index:1; background:#3498db; padding:10px;">
+        z-index: 1
+      </div>
+
+      <div style="position:absolute; top:40px; left:40px; z-index:2; background:#e74c3c; padding:10px;">
+        z-index: 2
+      </div>
+
+    </div>
+
+    <p>
+      większy z-index = wyżej w warstwie
+    </p>
+
   </div>
-  <figure>
-    <img class="image-demo" src="../img/z-index.png" alt="Z-index i stacking context">
-    <figcaption>Na obrazku: przykład stacking context, jak z-index zależy od kontekstu rodzica.</figcaption>
-  </figure>
+</div>
+
+<div class="section">
+  <h2>Dlaczego z-index czasem nie działa?</h2>
+
+  <div class="definition-box">
+      <p>Z-INDEX NIE DZIAŁA NA <code>position: static</code> !!!</p>
+
+  </div>
+</div>
+
+<div class="section">
+  <h2>Stylowanie scrolla</h2>
+
+  <div class="definition-box">
+
+    <div style="
+      width:200px;
+      height:100px;
+      overflow:auto;
+      scrollbar-color:#3498db #111;
+      scrollbar-width:thin;
+      background:#111;
+    ">
+      <div style="height:300px;">
+        scroll content
+      </div>
+    </div>
+
+    <p><code>scrollbar-color:#3498db #111;
+      scrollbar-width:thin;</code></p>
+
+  </div>
+</div>
   <div class="nav-links"><a href="cieniowanie.html">← Powrót</a><a href="formularze-1.html">Następna →</a></div>
 </article>
+
 <footer>©Jan Popowicz 2026</footer>
 </body>
 </html>

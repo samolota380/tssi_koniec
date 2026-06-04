@@ -12,6 +12,85 @@
     @keyframes pulse{ 0%{ transform:scale(1);} 50%{ transform:scale(1.06);} 100%{ transform:scale(1);} }
     .card{ transition: transform .25s ease, filter .25s ease; }
     .card:hover{ transform: translateY(-6px) rotate(-1deg); filter: brightness(1.06) saturate(1.05); }
+    .move-box{
+    width:80px;
+    height:80px;
+    background:#3498db;
+    border-radius:12px;
+    animation: przesuniecie 3s infinite ease-in-out;
+}
+
+@keyframes przesuniecie{
+    0%{
+        transform:translateX(0);
+    }
+
+    50%{
+        transform:translateX(200px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+}
+.rotate-box{
+    width:80px;
+    height:80px;
+    background:#9b59b6;
+    border-radius:12px;
+    animation: obrot 2s linear infinite;
+}
+
+@keyframes obrot{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+.color-box{
+    width:100px;
+    height:100px;
+    border-radius:12px;
+    animation: kolorki 4s infinite;
+}
+
+@keyframes kolorki{
+    0%{
+        background:#e74c3c;
+    }
+
+    33%{
+        background:#f1c40f;
+    }
+
+    66%{
+        background:#2ecc71;
+    }
+
+    100%{
+        background:#3498db;
+    }
+}
+
+.sprite-demo{
+    width:120px;
+    height:40px;
+    background:#3498db;
+    animation: kroki 2s steps(5) infinite;
+}
+
+@keyframes kroki{
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(250px);
+    }
+}
   </style>
 </head>
 <body>
@@ -27,39 +106,131 @@
   <div class="lesson-header"><h1>Animacje</h1><p>transform, transition, animation i @keyframes</p></div>
 
   <div class="section">
-    <h2>Przejścia (transition)</h2>
-    <div class="code-sample"><pre><code>.btn { display:inline-block; padding:10px 16px; background:#106226; color:#fff; border-radius:8px; transition: transform 180ms ease, box-shadow 180ms ease; }
-.btn:hover { transform: translateY(-4px) scale(1.02); box-shadow:0 8px 20px rgba(16,98,38,0.25); }</code></pre></div>
-    <div class="example-row">
-      <div class="example-result">
-        <p>Hover przycisk z transition</p>
-        <a class="btn" href="#">Najedź mnie</a>
-      </div>
-    </div>
+  <h2>Transition a Animation</h2>
+
+  <p>
+    Początkujący często mylą <code>transition</code> i
+    <code>animation</code>. Obie techniki służą do tworzenia ruchu,
+    ale działają inaczej.
+  </p>
+
+  <ul>
+    <li><strong>transition</strong> uruchamia się po zmianie stanu elementu (np. hover)</li>
+    <li><strong>animation</strong> może działać samodzielnie bez interakcji użytkownika</li>
+  </ul>
+
+  <div class="note">
+    <p>
+      Jeśli chcesz, aby przycisk płynnie zmieniał kolor po najechaniu,
+      użyj <code>transition</code>.
+      Jeśli element ma poruszać się sam przez cały czas,
+      użyj <code>animation</code>.
+    </p>
   </div>
+</div>
 
   <div class="section">
-    <h2>Animacje kluczowe (@keyframes)</h2>
-    <div class="code-sample"><pre><code>@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.06); } 100% { transform: scale(1); } }
-.pulse { display:inline-block; width:80px; height:80px; background:#e67e22; border-radius:12px; animation: pulse 1.6s infinite ease-in-out; }</code></pre></div>
-    <div class="example-row">
-      <div class="example-result">
-        <p>Pulsujący prostokąt.</p>
-        <div class="pulse"></div>
-      </div>
-    </div>
+  <h2>Jak działa @keyframes?</h2>
+
+  <p>
+    Reguła <code>@keyframes</code> definiuje kolejne etapy animacji.
+  </p>
+
+  <div class="code-sample">
+<pre><code>@keyframes przesun {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(100px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}</code></pre>
   </div>
 
-  <div class="section">
-    <h2>Łączenie transform i filter</h2>
-    <div class="code-sample"><pre><code>.card { transition: transform .25s ease, filter .25s ease; }
-.card:hover { transform: translateY(-6px) rotate(-1deg); filter: brightness(1.06) saturate(1.05); }</code></pre></div>
-    <div class="example-row">
-      <div class="example-result">
-        <div class="card" style="padding:18px; border-radius:12px; background:#0f1720; color:#fff;">Najedź na mnie to się obrócę.</div>
-      </div>
+  <p>
+    Liczby procentowe oznaczają moment animacji:
+  </p>
+
+  <ul>
+    <li>0% – początek</li>
+    <li>50% – połowa czasu</li>
+    <li>100% – koniec</li>
+  </ul>
+</div>
+
+  <div class="example-result">
+    <div class="move-box"></div>
+</div>
+<div class="example-result">
+    <div class="rotate-box"></div>
+</div>
+<div class="example-result">
+    <div class="color-box"></div>
+</div>
+
+<div class="section">
+    <h2>animation-timing-function</h2>
+
+    <p>
+        Właściwość <code>animation-timing-function</code>
+        określa tempo wykonywania animacji.
+        Dzięki niej można sprawić, że element będzie
+        przyspieszał, zwalniał lub poruszał się ze stałą prędkością.
+    </p>
+
+    <div class="code-sample">
+<pre><code>.element {
+    animation: przesuniecie 2s infinite ease;
+}</code></pre>
     </div>
+
+    <ul>
+        <li><code>linear</code> – stała prędkość przez cały czas</li>
+        <li><code>ease</code> – wolny start i koniec</li>
+        <li><code>ease-in</code> – powolny start</li>
+        <li><code>ease-out</code> – powolne zatrzymanie</li>
+        <li><code>ease-in-out</code> – wolny start i koniec</li>
+        <li><code>step-start</code> – natychmiastowy skok</li>
+        <li><code>step-end</code> – zmiana dopiero na końcu</li>
+        <li><code>steps()</code> – animacja podzielona na kroki</li>
+    </ul>
+</div>
+<div class="example-result">
+    <div class="sprite-demo"></div>
+</div>
+
+<div class="section">
+    <h2>animation-direction</h2>
+
+    <p>
+        Określa kierunek odtwarzania animacji.
+    </p>
+
+    <ul>
+        <li><code>normal</code> – od początku do końca</li>
+        <li><code>reverse</code> – od końca do początku</li>
+        <li><code>alternate</code> – tam i z powrotem</li>
+        <li><code>alternate-reverse</code> – odwrotnie tam i z powrotem</li>
+    </ul>
+</div>
+
+<div class="section">
+  <h2>Dobre praktyki</h2>
+
+  <div class="note">
+    <ul>
+      <li>Nie przesadzaj z animacjami.</li>
+      <li>Animacje powinny pomagać użytkownikowi, a nie rozpraszać.</li>
+      <li>Najwydajniejsze są animacje wykorzystujące <code>transform</code> i <code>opacity</code>.</li>
+      <li>Unikaj ciągłego animowania właściwości takich jak <code>width</code>, <code>height</code>, <code>top</code> i <code>left</code>.</li>
+    </ul>
   </div>
+</div>
 
   <div class="nav-links"><a href="responsywnosc.html">← Powrót</a><a href="../tutorials.html">Zakończ</a></div>
 </article>

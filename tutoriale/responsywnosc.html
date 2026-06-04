@@ -10,14 +10,76 @@
 <nav class="menu"><ul><li><a href="../index.html">Strona Główna</a></li><li><a href="../tutorials.html">Tutoriale</a></li><li><a href="../zapis.html">Zapisz się na kurs!</a></li><li><a href="../opis.html">O stronie</a></li></ul></nav>
 <article>
   <div class="lesson-header"><h1>Responsywność</h1><p>Media queries, picture/source, srcset, meta viewport</p></div>
+
+  <div class="section">
+  <h2>Co oznacza responsywność?</h2>
+
+  <div class="definition-box">
+    <p>
+      Responsywność to zdolność strony do zmiany układu w zależności od szerokości ekranu.
+    </p>
+
+    <ul>
+      <li>mobile (telefon)</li>
+      <li>tablet</li>
+      <li>desktop</li>
+    </ul>
+
+    <p>
+      Nie chodzi o skalowanie, tylko o zmianę layoutu.
+    </p>
+  </div>
+</div>
+
   <div class="section">
     <h2>Meta viewport</h2>
     <div class="definition-box">Obowiązkowy tag <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> aby strona skalowała się poprawnie.</div>
   </div>
-  <div class="section">
-    <h2>Przykład media queries</h2>
-    <div class="code-sample"><pre><code>@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }</code></pre></div>
+ <div class="section">
+  <h2>Media queries</h2>
+
+  <div class="definition-box">
+
+    <p>Zmiana układu na mniejszych ekranach:</p>
+
+    <div class="code-sample">
+<pre><code>/* desktop */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+    </div>
+
   </div>
+</div>
+
+
+<div class="section">
+  <h2>Typowe granice</h2>
+
+  <div class="definition-box">
+
+    <ul>
+      <li>≤ 480px → mobile</li>
+      <li>≤ 768px → tablet</li>
+      <li>≥ 748px → desktop</li>
+    </ul>
+  </div>
+</div>
 
     <img class="image-demo" src="../img/responsivity.jpg" alt="Progi responsywne">
 

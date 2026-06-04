@@ -11,27 +11,126 @@
 <article>
   <div class="lesson-header"><h1>Float</h1><p>Opływanie elementów za pomocą float</p></div>
 
+ <div class="section">
+  <h2>Jak działa float?</h2>
+
+  <div class="definition-box">
+    <p>
+      <code>float</code> przesuwa element w lewo lub prawo
+      i pozwala tekstowi go opływać.
+    </p>
+
+    <ul>
+      <li><code>float: left</code> – element przykleja się do lewej strony</li>
+      <li><code>float: right</code> – element przykleja się do prawej strony</li>
+      <li><code>float: none</code> – domyślne zachowanie</li>
+    </ul>
+
+    <p>
+      Float NIE służy do budowania nowoczesnych layoutów (do tego jest Flexbox i Grid).
+    </p>
+  </div>
   <div class="section">
-    <h2>Podstawy</h2>
-    <div class="definition-box">
-      <p>Właściwość <code>float</code> pozwala przesunąć element w lewo lub prawo i umożliwia tekstowi opływanie.</p>
+  <h2>Opływanie tekstu</h2>
+
+  <div class="definition-box">
+
+    <img src="../img/laptop.jpeg"
+         style="float:left; width:160px; margin:0 16px 16px 0; border-radius:10px;"
+         alt="float left">
+
+    <p>
+      To jest przykład działania float: left.
+      Tekst automatycznie opływa element po prawej stronie.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.
+    </p>
+
+    <p>
+      Tekst nie „ignoruje” obrazka –
+      tylko dopasowuje się do jego kształtu.
+    </p>
+
+  </div>
+  <div class="section">
+  <h2>float: right</h2>
+
+  <div class="definition-box">
+
+    <img src="../img/html_i_csss.jpg"
+         style="float:right; width:160px; margin:0 0 16px 16px; border-radius:10px;"
+         alt="float right">
+
+    <p>
+      W tym przypadku element jest przyklejony do prawej strony,
+      a tekst opływa go z lewej. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.
+    </p>
+
+    <p>
+      Różnica między left i right jest tylko w kierunku „przyklejenia”,
+      ale efekt wizualny jest często wykorzystywany w układach kolumnowych.
+    </p>
+
+  </div>
+</div>
+<div class="section">
+  <h2>Float jako system layoutu</h2>
+
+  <div class="definition-box">
+
+    <div style="width:30%; float:left; background:#3498db; padding:10px;">
+      Lewa kolumna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.
     </div>
+
+    <div style="width:40%; float:left; background:#2ecc71; padding:10px;">
+      Środek.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.
+    </div>
+
+    <div style="width:30%; float:left; background:#e74c3c; padding:10px;">
+      Prawa kolumna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.
+    </div>
+
+    <div style="clear:both;"></div>
+
   </div>
 
+  <p>
+    Można zrobić to równie dobrze za pomocą Flexboxa lub Grida. Ciężko z floata robić układy responsywne.
+  </p>
+</div>
   <div class="section">
-    <h2>Przykład</h2>
-    <div class="code-sample"><pre><code>.img { float: left; margin: 0 16px 16px 0; }
-.clearfix::after { content: ""; display: table; clear: both; }</code></pre></div>
-  </div>
+    <h2>Obrazki schematowe</h2>
 
   <div class="section">
-    <p>Tak ogólnie można używać<code>float</code> (poniżej):</p>
+    <p>Tak powinno się korzystać z <code>float</code>:</p>
     <img class="image-demo" src="../img/float.png" alt="Przykład float">
   </div>
   <div class="section">
-    <p>Tutaj przykład jak się korzysta z floatów na dawnym zadaniu domowym:</p>
+    <p>Tutaj przykład jak można zrobić z floatów układ strony:</p>
     <img class="image-demo" src="../img/floaty.png" alt="Przykład float" style="max-width:840px; width:99%; overflow:hidden;">
   </div>
+
+  <div class="section">
+  <h2>Dlaczego nie ma float center?</h2>
+
+  <div class="definition-box">
+
+    <p>
+      Nie istnieje <code>float: center</code>.
+    </p>
+
+    <p>
+      Float działa tylko w dwóch kierunkach:
+      <code>left</code> i <code>right</code>.
+    </p>
+
+    <p>
+      Centrowanie robi się przez:
+      <code>margin: 0 auto</code> albo Flexbox.
+    </p>
+
+  </div>
+</div>
 
   <div class="nav-links"><a href="box-model.html">← Powrót</a><a href="flexbox.html">Następna →</a></div>
 </article>

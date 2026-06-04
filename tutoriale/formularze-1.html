@@ -10,12 +10,78 @@
 <nav class="menu"><ul><li><a href="../index.html">Strona Główna</a></li><li><a href="../tutorials.html">Tutoriale</a></li><li><a href="../zapis.html">Zapisz się na kurs!</a></li><li><a href="../opis.html">O stronie</a></li></ul></nav>
 <article>
   <div class="lesson-header"><h1>Formularze — część 1</h1><p>podstawowe elementy: form, input, label, textarea</p></div>
-  <div class="section">
-    <h2>Podstawowe atrybuty</h2>
-    <div class="definition-box">
-      <p>form action, method (GET/POST), autocomplete, novalidate oraz input[type=text], password, submit, reset.</p>
-    </div>
+<div class="definition-box">
+  <p>
+    Formularz składa się z elementu <code>form</code> oraz pól
+    umożliwiających wprowadzanie danych przez użytkownika.
+  </p>
+
+  <ul>
+    <li>
+      <code>action</code> – adres, pod który zostaną wysłane dane formularza.
+    </li>
+
+    <li>
+      <code>method</code> – sposób wysyłania danych. Najczęściej
+      <code>GET</code> lub <code>POST</code>.
+    </li>
+
+    <li>
+      <code>autocomplete</code> – pozwala przeglądarce podpowiadać wcześniej wpisane dane.
+    </li>
+
+    <li>
+      <code>novalidate</code> – wyłącza wbudowaną walidację formularza.
+    </li>
+
+    <li>
+      <code>name</code> – nazwa pola wysyłana do serwera.
+    </li>
+
+    <li>
+      <code>id</code> – unikalny identyfikator elementu.
+    </li>
+
+    <li>
+      <code>required</code> – pole musi zostać wypełnione.
+    </li>
+
+    <li>
+      <code>placeholder</code> – tekst wyświetlany przed wpisaniem danych.
+    </li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Metody GET i POST</h2>
+
+  <p>
+    Dane formularza mogą zostać wysłane na dwa podstawowe sposoby.
+  </p>
+
+  <ul>
+    <li>
+      <code>GET</code> – dane są widoczne w adresie URL, jako palyoad po ?.
+      Używana głównie do wyszukiwarek i filtrowania danych.
+    </li>
+
+    <li>
+      <code>POST</code> – dane są wysyłane w treści żądania.
+      Stosowana przy logowaniu, rejestracji oraz wysyłaniu formularzy kontaktowych. Trzeba zastosować to gdy się użyje <code>&lt;textarea&gt;</code>.
+    </li>
+  </ul>
+
+  <div class="code-sample">
+<pre><code>&lt;form action="/search" method="get"&gt;
+...
+&lt;/form&gt;
+
+&lt;form action="/register" method="post"&gt;
+...
+&lt;/form&gt;</code></pre>
   </div>
+</div>
+
   <div class="section">
     <h2>Przykład formularza</h2>
     <div class="code-sample"><pre><code>&lt;form action="/send" method="post"&gt;
@@ -26,11 +92,11 @@
       <form action="#" method="post" novalidate>
         <div class="form-field">
           <label for="f-name">Imię</label>
-          <input id="f-name" name="f-name" placeholder="Jan" required aria-required="true">
+          <input id="f-name" name="f-name" placeholder="Jan" required>
         </div>
         <div class="form-field">
           <label for="f-email">Email</label>
-          <input id="f-email" name="f-email" type="email" placeholder="jan@example.com" required aria-required="true">
+          <input id="f-email" name="f-email" type="email" placeholder="jan@example.com" required>
         </div>
         <div class="form-field">
           <label for="f-msg">Wiadomość</label>
@@ -47,11 +113,58 @@
     <h2>Weryfikacja i atrybuty</h2>
     <div class="code-sample"><pre><code>&lt;input type="email" required&gt;
 &lt;input type="tel" pattern="[0-9]{9}" title="9 cyfr"&gt;
-&lt;input required minlength="3"&gt;</code></pre></div>
-    <div class="example-result">
-      <p>Używaj <code>required</code>, <code>type</code>, <code>pattern</code>, <code>minlength</code> i <code>maxlength</code> aby ograniczyć dane przed wysłaniem.</p>
-    </div>
+&lt;input required minlength="3"&gt;</code></pre>
+
+</div>
+<div class="example-result">
+  <ul>
+    <li>
+      <code>required</code> – pole obowiązkowe.
+    </li>
+
+    <li>
+      <code>minlength</code> – minimalna liczba znaków.
+    </li>
+
+    <li>
+      <code>maxlength</code> – maksymalna liczba znaków.
+    </li>
+
+    <li>
+      <code>min</code> – najmniejsza dopuszczalna wartość.
+    </li>
+
+    <li>
+      <code>max</code> – największa dopuszczalna wartość.
+    </li>
+
+    <li>
+      <code>pattern</code> – wzorzec wyrażenia regularnego.
+    </li>
+
+    <li>
+      <code>readonly</code> – pole tylko do odczytu.
+    </li>
+
+    <li>
+      <code>disabled</code> – pole wyłączone.
+    </li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Podsumowanie</h2>
+
+  <ul>
+    <li>Formularze służą do przesyłania danych od użytkownika.</li>
+    <li>Element <code>form</code> jest kontenerem dla pól formularza.</li>
+    <li>Najczęściej używane metody wysyłania danych to <code>GET</code> i <code>POST</code>.</li>
+    <li>Element <code>label</code> opisuje pola formularza.</li>
+    <li>Walidacja pozwala ograniczyć błędne dane jeszcze przed wysłaniem formularza.</li>
+  </ul>
+</div>
   </div>
+  
 
   <div class="nav-links"><a href="pozycjonowanie-kontekstowe.html">← Powrót</a><a href="formularze-2.html">Następna →</a></div>
 </article>

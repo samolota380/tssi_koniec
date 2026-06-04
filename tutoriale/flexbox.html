@@ -11,27 +11,136 @@
 <article>
   <div class="lesson-header"><h1>Flexbox</h1><p>Układy jednowymiarowe z Flexbox</p></div>
   <div class="section">
-    <h2>Podstawowe właściwości</h2>
-    <div class="definition-box">
-      <ul>
-        <li><code>display:flex;</code></li>
-        <li><code>flex-direction</code></li>
-        <li><code>justify-content</code></li>
-        <li><code>align-items</code></li>
-      </ul>
-    </div>
+  <h2>Czym jest Flexbox?</h2>
+
+  <div class="definition-box">
+    <p>
+      Flexbox to system układu elementów w jednym wymiarze:
+      w poziomie albo w pionie.
+    </p>
+
+    <ul>
+      <li>kontener steruje układem elementów</li>
+      <li>elementy automatycznie dopasowują rozmiar</li>
+      <li>idealny do pasków, menu, kart, layoutów sekcji</li>
+    </ul>
+
+    <p>
+      Kluczowa zasada: <strong>to rodzic steruje dziećmi</strong>.
+    </p>
   </div>
-  <div class="section">
-    <h2>Przykład</h2>
-    <div class="code-sample"><pre><code>.row { display:flex; gap:12px; }
-.col { flex:1; padding:16px; background:#222; }</code></pre></div>
-    <div class="definition-box row">
-      <div class="col">Kolumna 1</div>
-      <div class="col">Kolumna 2</div>
-      <div class="col">Kolumna 3</div>
+</div>
+
+<div class="section">
+  <h2>flex-direction</h2>
+
+  <div class="definition-box">
+
+    <p><strong>row (domyślnie)</strong></p>
+    <div style="display:flex; gap:10px; margin-bottom:20px;">
+      <div style="background:#3498db; padding:10px;">1</div>
+      <div style="background:#2ecc71; padding:10px;">2</div>
+      <div style="background:#e74c3c; padding:10px;">3</div>
     </div>
+
+    <p><strong>column</strong></p>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="background:#3498db; padding:10px;">1</div>
+      <div style="background:#2ecc71; padding:10px;">2</div>
+      <div style="background:#e74c3c; padding:10px;">3</div>
+    </div>
+
   </div>
-    <img class="image-demo" src="../img/flex.png" alt="Schemat flexbox">
+</div>
+
+<div class="section">
+  <h2>justify-content (poziom)</h2>
+
+  <div class="definition-box">
+
+    <p>flex-start</p>
+    <div style="display:flex; justify-content:flex-start; gap:10px;">
+      <div style="background:#555; padding:10px;">A</div>
+      <div style="background:#555; padding:10px;">B</div>
+    </div>
+
+    <p>center</p>
+    <div style="display:flex; justify-content:center; gap:10px;">
+      <div style="background:#555; padding:10px;">A</div>
+      <div style="background:#555; padding:10px;">B</div>
+    </div>
+
+    <p>space-between</p>
+    <div style="display:flex; justify-content:space-between;">
+      <div style="background:#555; padding:10px;">A</div>
+      <div style="background:#555; padding:10px;">B</div>
+      <div style="background:#555; padding:10px;">C</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h2>flex: 1 – automatyczne dzielenie przestrzeni</h2>
+
+  <div class="definition-box">
+
+    <div style="display:flex; gap:10px;">
+      <div style="flex:1; background:#3498db; padding:10px;">1</div>
+      <div style="flex:1; background:#2ecc71; padding:10px;">2</div>
+      <div style="flex:1; background:#e74c3c; padding:10px;">3</div>
+    </div>
+
+    <p>
+      Każdy element dostaje równą część dostępnej szerokości. (wszystkie mają <code>flex:1</code>)
+    </p>
+
+  </div>
+</div>
+
+<div class="section">
+  <h2>Różne proporcje</h2>
+
+  <div class="definition-box">
+
+    <div style="display:flex; gap:10px;">
+      <div style="flex:2; background:#3498db; padding:10px;">flex:2</div>
+      <div style="flex:1; background:#2ecc71; padding:10px;">flex:1</div>
+      <div style="flex:1; background:#e74c3c; padding:10px;">flex:1</div>
+    </div>
+
+    <p>
+      Pierwszy element jest dwa razy szerszy. (<code>flex:2</code>)
+    </p>
+
+  </div>
+</div>
+<div class="section">
+  <h2>Flexbox jako layout strony</h2>
+
+  <div class="definition-box">
+
+    <div style="display:flex; gap:10px;">
+
+      <aside style="flex:1; background:#2ecc71; padding:10px;">
+        sidebar (flex:1)
+      </aside>
+
+      <main style="flex:3; background:#3498db; padding:10px;">
+        content (flex:3)
+      </main>
+
+    </div>
+
+  </div>
+</div>
+
+ <div class="section">
+  <h2>Ściąga</h2>
+  <img class="image-demo" src="../img/flex.png" alt="schemat flexbox">
+</div>
   <div class="nav-links"><a href="float.html">← Powrót</a><a href="grid.html">Następna →</a></div>
 </article>
 <footer>©Jan Popowicz 2026</footer>

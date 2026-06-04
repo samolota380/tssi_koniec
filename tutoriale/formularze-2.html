@@ -11,17 +11,44 @@
 <article>
   <div class="lesson-header"><h1>Formularze — część 2</h1><p>zaawansowane typy pól i atrybuty</p></div>
   <div class="section">
-    <h2>Typy input</h2>
-    <div class="definition-box">
-      <p>email, tel, url, number, range, date, time, color, file, checkbox, radio, hidden.</p>
-    </div>
-  </div>
+  <h2>Najpopularniejsze typy input</h2>
+
+  <ul>
+    <li><code>text</code> – zwykłe pole tekstowe</li>
+    <li><code>password</code> – hasło ukrywane gwiazdkami</li>
+    <li><code>email</code> – adres e-mail</li>
+    <li><code>number</code> – liczby</li>
+    <li><code>date</code> – wybór daty</li>
+    <li><code>tel</code> – numer telefonu</li>
+    <li><code>checkbox</code> – pole wyboru</li>
+    <li><code>radio</code> – wybór jednej opcji z grupy</li>
+    <li><code>file</code> – przesyłanie plików</li>
+    <li><code>submit</code> – wysłanie formularza</li>
+    <li><code>reset</code> – wyczyszczenie formularza</li>
+  </ul>
+</div>
+
   <div class="section">
-    <h2>Fieldset, legend i dostępność</h2>
-    <div class="definition-box">
-      <p>Używaj <code>label</code>, <code>fieldset</code>, <code>legend</code>, <code>tabindex</code> i <code>aria-*</code> dla dostępności.</p>
-    </div>
+  <h2>Element label</h2>
+
+  <p>
+    Etykieta opisuje pole formularza.
+    Kliknięcie etykiety powoduje przejście do powiązanego pola.
+  </p>
+
+  <div class="code-sample">
+<pre><code>&lt;label for="email"&gt;Adres e-mail&lt;/label&gt;
+&lt;input id="email" type="email"&gt;</code></pre>
   </div>
+
+  <div class="note">
+    <p>
+      Używanie <code>label</code> poprawia dostępność strony
+      dla osób korzystających z czytników ekranu.
+    </p>
+  </div>
+</div>
+
   <div class="section">
     <h2>Przykłady pól i ich użycie</h2>
     <div class="code-sample"><pre><code>&lt;input type="range" min="0" max="100" value="50"&gt;

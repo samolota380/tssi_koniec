@@ -5,13 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa odsyłaczy na obrazku</title>
     <link rel="stylesheet" href="../style.css">
-    <style>
-        .map-layout{ display:grid; grid-template-columns: minmax(220px,1fr) minmax(280px,320px); gap:24px; align-items:start; }
-        #obrazek{ width:100%; max-width:900px; border-radius:12px; display:block; }
-        .map-note{ background:#2c3e50; padding:18px; border-radius:10px; }
-        .map-note ol{ margin-left:18px; }
-        @media(max-width:900px){ .map-layout{ grid-template-columns:1fr; } }
-    </style>
+<style>
+  #map-wrapper{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+
+  #obrazek{
+    width:1000px;
+    height:1000px;
+    border-radius:10px;
+  }
+
+  #code-only{
+    display:none;
+  }
+
+  @media (max-width: 1000px){
+    #obrazek{
+      display:none;
+    }
+
+    #code-only{
+      display:block;
+    }
+  }
+
+  .code-sample{
+    background:#111;
+    padding:20px;
+    border-radius:10px;
+    overflow-x:auto;
+  }
+</style>
 </head>
 <body>
 <nav class="menu">
@@ -25,7 +53,7 @@
 <article>
     <div class="lesson-header">
         <h1>Mapa odsyłaczy na obrazku</h1>
-        <p>Usemap i area - jak tworzyć interaktywne obrazy</p>
+        <p>Jak chcemy zrobić obrazek, na którym poszczególne obszary są klikalne</p>
     </div>
     <div class="section map-layout">
         <div>
@@ -42,19 +70,26 @@
         </div>
         <div class="map-note">
             <h2>Przykład kodu</h2>
-            <div class="example-code"><pre><code>&lt;img src="mapa.png" alt="Mapa" usemap="#mapa"&gt;
-&lt;map name="mapa"&gt;
-  &lt;area shape="rect" coords="10,10,200,150" href="strona1.html" alt="Obszar 1"&gt;
-  &lt;area shape="circle" coords="300,120,50" href="strona2.html" alt="Obszar 2"&gt;
-&lt;/map&gt;</code></pre></div>
-            <p>Na obrazku można kliknąć wybrane obszary i przejść do różnych adresów. To przydatne do interaktywnych planów, map i diagramów.</p>
-        </div>
+            <div class="example-code">
+<pre><code>&lt;map name="newyorkmap"&gt;
+  &lt;area shape="poly" coords="..." alt="Manhattan" href="..."&gt;
+  &lt;area shape="circle" coords="..." alt="Long Island" href="..."&gt;
+  &lt;area shape="poly" coords="..." alt="Bronx" href="..."&gt;
+  &lt;area shape="poly" coords="..." alt="Brooklyn" href="..."&gt;
+  &lt;area shape="poly" coords="..." alt="Queens" href="..."&gt;
+  &lt;area shape="circle" coords="..." alt="JFK Airport" href="..."&gt;
+  &lt;area shape="circle" coords="..." alt="LGA Airport" href="..."&gt;
+&lt;/map&gt;
+
+&lt;img src="mapa.png" usemap="#newyorkmap"&gt;</code></pre>
+</div>
     </div>
     <div class="section">
         <h2>Co warto wiedzieć</h2>
         <div class="definition-box">
             <p>Warto używać czytelnych <code>alt</code> oraz poprawnych współrzędnych <code>coords</code>. Kształt <code>shape</code> może być <code>rect</code>, <code>circle</code> lub <code>poly</code>.</p>
         </div>
+    </div>
     </div>
     <div class="nav-links">
         <a href="selektory.html">← Powrót</a>

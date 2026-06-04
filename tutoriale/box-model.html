@@ -12,23 +12,163 @@
   <div class="lesson-header"><h1>Model pudełkowy (Box Model)</h1><p>Margin, border, padding, content, background</p></div>
 
   <div class="section">
-    <h2>Wyjaśnienie</h2>
-    <div class="definition-box">
-      <p>Każdy element to pudełko: content → padding → border → margin. Box-sizing wpływa na sposób liczenia szerokości.</p>
-    </div>
+  <h2>Jak działa model pudełkowy?</h2>
+
+  <div class="definition-box">
+    <p>
+      Każdy element HTML jest traktowany jak prostokąt (pudełko).
+      Składa się on z czterech warstw:
+    </p>
+
+    <ul>
+      <li><code>content</code> – właściwa zawartość (tekst, obraz)</li>
+      <li><code>padding</code> – odstęp wewnętrzny od treści do obramowania</li>
+      <li><code>border</code> – obramowanie elementu</li>
+      <li><code>margin</code> – odstęp od innych elementów</li>
+    </ul>
+
+    <p>
+      Dodatkowo istnieje <code>box-sizing</code>, które zmienia sposób liczenia szerokości i wysokości elementu.
+    </p>
   </div>
+</div>
 
   <div class="section">
-    <h2>Przykład</h2>
-    <div class="code-sample"><pre><code>.box { width: 300px; padding: 20px; border: 5px solid #333; margin: 10px; }
-* { box-sizing: border-box; }</code></pre></div>
+  <h2>Warstwy modelu pudełkowego</h2>
 
-    <div class="definition-box">
-      <p class="box" style="width:300px;padding:20px;border:5px solid #333;margin:10px;background:#222;">Przykładowe pudełko</p>
-    </div>
+  <div class="definition-box">
+
+    <p style="padding:20px; border:5px solid #3498db; margin:10px; background:#2c3e50;">
+      margin (zewnętrzny odstęp)
+      <span style="display:block; padding:20px; border:5px solid #e67e22; background:#1f2937;">
+        border (obramowanie)
+        <span style="display:block; padding:20px; background:#111; border:1px solid #555;">
+          padding (odstęp wewnętrzny)
+          <span style="display:block; background:#000; padding:10px;">
+            content (treść)
+          </span>
+        </span>
+      </span>
+    </p>
+
   </div>
+</div>
 
     <img class="image-demo" src="../img/box.png" alt="Schemat modelu pudełkowego">
+
+  <div class="section">
+  <h2>width, height i box-sizing</h2>
+
+  <div class="definition-box">
+
+    <p>
+      <code>width</code> i <code>height</code> określają rozmiar elementu,
+      ale ich interpretacja zależy od <code>box-sizing</code>.
+    </p>
+
+    <ul>
+      <li>
+        <code>content-box</code> – padding i border zwiększają rozmiar elementu, co jest denerwujące jak się liczy pixele do układu strony. Jest to domyślna wartość, ale lepiej jej unikać.
+      </li>
+
+      <li>
+        <code>border-box</code> – padding i border są „wliczone” w width/height
+      </li>
+    </ul>
+
+  </div>
+</div>
+<div class="section">
+  <h2>Margin vs padding</h2>
+
+  <div class="definition-box">
+
+    <div style="background:#2c3e50; padding:20px;">
+      padding – odstęp od WEWNĄTRZ
+
+      <div style="background:#111; margin:20px; padding:10px;">
+        margin – odstęp od ZEWNĄTRZ
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <h2>Centrowanie elementów</h2>
+
+  <div class="definition-box">
+
+    <p>Najczęstszy sposób centrowania bloków:</p>
+
+    <div style="width:200px; margin:0 auto; background:#3498db; padding:10px;">
+      margin: 0 auto;
+    </div>
+
+    <br>
+
+    <p>Centrowanie tekstu:</p>
+
+    <div style="text-align:center; background:#111; padding:10px;">
+      text-align: center;
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <h2>Tło (background)</h2>
+
+  <div class="definition-box">
+
+    <div style="padding:20px; background:#3498db;">
+      background-color:blue;
+    </div>
+
+    <br>
+
+    <div style="padding:20px; background-image:linear-gradient(#e74c3c, #ececec);">
+      background-image: linear-gradient(red, white);
+    </div>
+
+    <br>
+
+    <div style="padding:20px; background:url('../img/laptop.jpeg'); background-size:cover; color:rgb(121, 68, 178);">
+      background-image: url('../img/laptop.jpeg');
+    </div>
+
+  </div>
+</div>
+<div class="section">
+  <h2>Rodzaje borderów</h2>
+
+  <div class="definition-box">
+
+    <p style="border:2px solid #fff; padding:10px;">solid</p>
+    <p style="border:2px dashed #fff; padding:10px;">dashed</p>
+    <p style="border:2px dotted #fff; padding:10px;">dotted</p>
+    <p style="border:4px double #fff; padding:10px;">double</p>
+
+    <br>
+
+    <p style="border-radius:10px; border:2px solid #3498db; padding:10px;">
+      border-radius
+    </p>
+
+  </div>
+</div>
+<div class="section">
+  <h2>Ważne podsumowanie</h2>
+
+  <ul>
+    <li>Każdy element w CSS to pudełko.</li>
+    <li>Model składa się z: content, padding, border, margin.</li>
+    <li><code>box-sizing: border-box</code> upraszcza liczenie rozmiarów.</li>
+    <li>Margin jest na zewnątrz bordera</li>
+    <li>Padding jest wewnątrz bordera</li>
+  </ul>
+</div>
 
   <div class="nav-links"><a href="jednostki.html">← Powrót</a><a href="float.html">Następna →</a></div>
 </article>

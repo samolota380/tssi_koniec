@@ -11,16 +11,142 @@
 <article>
   <div class="lesson-header"><h1>Pozycjonowanie elementów</h1><p>position: static, relative, absolute, fixed, sticky</p></div>
   <div class="section">
-    <h2>Omówienie</h2>
-    <div class="definition-box">
-      <p>Różnice między wartościami position i jak działają top/right/bottom/left. Sticky działa względem najbliższego przodka, fixed względem viewport.</p>
+  <h2>Jak działa position?</h2>
+
+  <div class="definition-box">
+    <p>
+      <code>position</code> określa sposób, w jaki element jest
+      umieszczany na stronie.
+    </p>
+
+    <ul>
+      <li><code>static</code> – domyślne, brak pozycjonowania</li>
+      <li><code>relative</code> – przesunięcie względem siebie</li>
+      <li><code>absolute</code> – względem najbliższego „pozycjonowanego” rodzica</li>
+      <li><code>fixed</code> – względem okna przeglądarki</li>
+      <li><code>sticky</code> – mieszanka relative i fixed</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <h2>static vs relative</h2>
+
+  <div class="definition-box">
+
+    <p>static (brak wpływu top/left)</p>
+    <div style="position:static; background:#3498db; padding:10px;">
+      normalny element
     </div>
+
+    <br>
+
+    <p>relative (przesunięcie)</p>
+    <div style="position:relative; top:10px; left:20px; background:#2ecc71; padding:10px;">
+      przesunięty element o top:10px i left:20px
+    </div>
+
+    <p>
+      <code>relative</code> NIE usuwa elementu z układu — tylko go przesuwa.
+    </p>
+
   </div>
+</div>
+
+
+<div class="section">
+  <h2>position: absolute</h2>
+
+  <div class="definition-box">
+
+    <div style="position:relative; height:120px; background:#111;">
+
+      <div style="position:absolute; top:10px; left:10px; background:#e74c3c; padding:10px;">
+        absolute
+      </div>
+
+      <p style="color:#aaa; padding:10px;">
+        rodzic ma position: relative
+      </p>
+
+    </div>
+
+    <p>
+      absolute „ucieka” z normalnego układu i liczy pozycję względem rodzica z position:relative;.
+    </p>
+
+  </div>
+</div>
+
+<div class="section">
+  <h2>position: fixed</h2>
+
+  <div class="definition-box">
+
+    <div style="position:fixed; bottom:100px; right:100px; background:#9b59b6; padding:10px; color:white;">
+      fixed
+    </div>
+
+    <p>
+      fixed zawsze pozostaje w tym samym miejscu ekranu,
+      nawet podczas scrollowania. Jak widać, nie jest wtym kontenerze, tylko od samego początku "tak sobie latał" po stronie.
+    </p>
+
+  </div>
+</div>
+
+
+<div class="section">
+  <h2>position: sticky</h2>
+
+  <div class="definition-box">
+
+    <div style="height:200px; overflow:auto; border:1px solid #444;">
+      <p style="padding:10px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.
+      </p>
+      <div style="position:sticky; top:0; background:#f1c40f; padding:10px;">
+        sticky div
+      </div>
+
+      <p style="padding:10px;">
+        Scrolluj ten kontener...
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.
+      </p>
+
+      <p style="padding:10px;">
+        Element „przykleja się” dopiero po osiągnięciu top.
+      </p>
+
+      <p style="padding:10px;">
+        Dopóki nie dojedzie do góry — zachowuje się jak relative.
+      </p>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <h2>Typowy błąd</h2>
+
+  <div class="definition-box">
+
+    <p>
+      <strong>absolute bez rodzica relative</strong>
+    </p>
+
+    <p>
+      Wtedy element pozycjonuje się względem całej strony,
+      co często daje „losowe” efekty.
+    </p>
+
+  </div>
+</div>
+
   <div class="section">
-    <h2>Przykłady</h2>
-    <div class="code-sample"><pre><code>.relative { position: relative; }
-.absolute { position: absolute; top: 10px; left: 20px; }</code></pre></div>
-  </div>
+    <h2>Ściąga</h2>
     <img class="image-demo" src="../img/pozycje.png" alt="Schemat pozycjonowania">
 
   <div class="nav-links"><a href="menu.html">← Powrót</a><a href="cieniowanie.html">Następna →</a></div>

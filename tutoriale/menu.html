@@ -5,26 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .demo-links a{
+  display:inline-block;
+  margin:6px 0;
+  padding:8px 12px;
+  background:#2c3e50;
+  color:#fff;
+  text-decoration:underline;
+  border-radius:6px;
+  transition:0.2s;
+}
+
+
+#link-hover:hover{
+  background:#3498db;
+}
+
+#link-active:active{
+  background:#e74c3c;
+  transform:scale(0.97);
+}
+
+#link-focus:focus{
+  outline:none;
+  box-shadow:0 0 0 3px #f1c40f;
+}
+  </style>
 </head>
 <body>
 <nav class="menu"><ul><li><a href="../index.html">Strona Główna</a></li><li><a href="../tutorials.html">Tutoriale</a></li><li><a href="../zapis.html">Zapisz się na kurs!</a></li><li><a href="../opis.html">O stronie</a></li></ul></nav>
 <article>
   <div class="lesson-header"><h1>Menu poziome i pionowe</h1><p>Nawigacja, listy i stany linków</p></div>
-  <div class="section">
-    <h2>Przykład struktury</h2>
-    <div class="code-sample"><pre><code>&lt;nav&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;</code></pre></div>
+ <div class="section">
+  <h2>Czym jest menu?</h2>
+
+  <div class="definition-box">
+    <p>
+      Menu (nawigacja) to zestaw linków prowadzących do najważniejszych
+      sekcji strony.
+    </p>
+
+    <ul>
+      <li>powinno być czytelne i przewidywalne</li>
+      <li>zwykle bazuje na liście HTML</li>
+      <li>może być poziome lub pionowe</li>
+    </ul>
+
+    <p>
+     Buduje się je w oparciu o <code>nav</code>, <code>ul</code> i <code>a</code>.
+    </p>
   </div>
-  <div class="section">
-    <h2>Stany linków</h2>
-    <div class="definition-box">
-      <p>:link, :visited, :hover, :active, :focus — kolejność ma znaczenie.</p>
-    </div>
+</div>
+
+<div class="section">
+  <h2>Jak zbudowane jest menu?</h2>
+
+  <div class="definition-box">
+
+    <ul>
+      <li><code>&lt;nav&gt;</code> – kontener nawigacji</li>
+      <li><code>&lt;ul&gt;</code> – lista elementów menu</li>
+      <li><code>&lt;li&gt;</code> – pojedyncza pozycja</li>
+      <li><code>&lt;a&gt;</code> – faktyczny link</li>
+    </ul>
+
+    <p>
+      To wynika z semantyki porządnej strony HTML – menu to lista, nie losowe przyciski.
+    </p>
+
   </div>
-    <img class="image-demo" src="../img/menuukład.png" alt="Przykłady menu">
+</div>
+
+ <div class="section">
+  <h2>Stany linków</h2>
+
+  <div class="definition-box">
+
+    <p>
+      Linki zmieniają wygląd w zależności od interakcji użytkownika.
+    </p>
+
+    <ul>
+      <li><code>:link</code> – nieodwiedzony link</li>
+      <li><code>:visited</code> – już kliknięty</li>
+      <li><code>:hover</code> – kursor nad linkiem</li>
+      <li><code>:active</code> – kliknięcie w trakcie</li>
+      <li><code>:focus</code> – fokus klawiatury</li>
+    </ul>
+
+  </div>
+</div>
+
+<div class="section">
+  <h2>Demonstracja stanów linków</h2>
+  <div class="definition-box demo-links">
+    <a id="link-normal" href="#">zwykły link</a>
+    <a id="link-hover" href="#">:hover – zmiana koloru</a>
+    <a id="link-active" href="#">:active – kliknięcie</a>
+    <a id="link-focus" href="#">:focus – fokus przez Tab na klawiaturze</a>
+
+  </div>
+</div>
+
+<div class="section">
+  <h2>Przykład układu z menu (i poziomym, i pionowym)</h2>
+
+    <img class="image-demo" src="../img/menuukład.png" alt="Przykłady menu"></div>
+    <div class="section">
+        <h2>Dobre praktyki</h2>
+
+        <ul>
+          <li>Menu powinno być zawsze widoczne lub łatwo dostępne</li>
+          <li>Hover i focus powinny być wyraźne</li>
+          <li>Menu musi działać na urządzeniach mobilnych</li>
+        </ul>
+
+</div>
     
   <div class="nav-links"><a href="grid.html">← Powrót</a><a href="selektory.html">Następna →</a></div>
 </article>
